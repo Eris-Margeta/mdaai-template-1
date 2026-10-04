@@ -9,7 +9,6 @@ This document provides navigation guidance for AI agents working in this reposit
 ```
 /
 ├── AGENTS.md                  <- Canonical AI entry point
-├── CLAUDE.md                  <- Compatibility pointer to AGENTS.md
 ├── project-meta.yaml          <- Project identity
 ├── VERSION                    <- Current version
 ├── README.md                  <- Public documentation
@@ -79,7 +78,7 @@ Read-only analysis, documentation inspection, planning, and advice do not requir
 
 Implementation, file edits, architecture changes, strategic document updates, releases, and checkpoints require the Work Order lifecycle before changes begin.
 
-Use the nearest `AGENTS.md` only. Do not scan parent project folders unless explicitly asked by the Operator.
+For any agent system, point its entry instructions to the nearest AGENTS.md. Applicable parent and scoped governance files are cumulative.
 
 Do not perform git state-changing operations unless explicitly requested by the Operator.
 

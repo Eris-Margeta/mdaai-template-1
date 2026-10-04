@@ -9,7 +9,6 @@ version: "1.0.0"
 
 # Files that ALWAYS sync from template to projects
 always_sync:
-  - "CLAUDE.md"
   - "AGENTS.md"
   - "SECURITY.md"
   - "CONTRIBUTING.md"
