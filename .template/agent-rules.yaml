@@ -1,0 +1,464 @@
+# agent-rules.yaml
+# Machine-parseable version of AI-INSTRUCTIONS.md
+# This file enables automated validation and enforcement
+
+version: "1.0.0"
+protocol: "TEJL/MDAAI"
+protocol_version: "2.0"
+
+# =============================================================================
+# ENTRY POINT
+# =============================================================================
+
+entry_point:
+  file: "AGENTS.md"
+  required: true
+  action: "read_first_always"
+
+# =============================================================================
+# REQUIRED READS (In Order)
+# =============================================================================
+
+required_reads:
+  order:
+    - path: "AGENTS.md"
+      purpose: "entry_point"
+      required: true
+
+    - path: "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md"
+      purpose: "constitution"
+      required: true
+
+    - path: "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md"
+      purpose: "multi_agent_rules"
+      required: "if_multi_agent"
+
+    - path: "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md"
+      purpose: "backlog"
+      required: true
+
+    - path: "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPER-GUIDE.md"
+      purpose: "technical_context"
+      required: true
+
+    - path: "PROJECT-INTERNAL/KNOWLEDGE/GOTCHAS.md"
+      purpose: "known_pitfalls"
+      required: true
+
+    - path: "PROJECT-INTERNAL/WORK-ORDERS/registry.json"
+      purpose: "recent_activity"
+      required: true
+
+    - path: "PROJECT-INTERNAL/AI/functions/work-orders.json"
+      purpose: "work_order_schema"
+      required: "if_creating_work_orders"
+
+    - path: "PROJECT-INTERNAL/AI/functions/registry.json"
+      purpose: "registry_schema"
+      required: "if_creating_work_orders"
+
+    - path: "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md"
+      purpose: "development_principles"
+      required: "if_writing_code"
+
+    - path: "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md"
+      purpose: "testing_approach"
+      required: "if_writing_tests"
+
+    - path: "PROJECT-INTERNAL/GOVERNANCE/LIFECYCLE-PHASES-PROTOCOL.md"
+      purpose: "lifecycle_requirements"
+      required: true
+
+    - path: "PROJECT-INTERNAL/GOVERNANCE/BETA-PHASE-PROTOCOL.md"
+      purpose: "beta_phase_workflows"
+      required: "if_beta_phase"
+
+    - path: "PROJECT-INTERNAL/MANAGEMENT/PROJECT-RULES.md"
+      purpose: "project_specific_rules"
+      required: true
+
+    - path: "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md"
+      purpose: "system_environment"
+      required: "if_system_operations"
+
+# =============================================================================
+# DOCUMENT PERMISSIONS
+# =============================================================================
+
+document_permissions:
+  # AI CANNOT modify these
+  immutable:
+    - "PROJECT-INTERNAL/GOVERNANCE/**"
+    - "PROJECT-INTERNAL/AI/**"                  # Function schemas
+    - "PROJECT-INTERNAL/ARCHITECTURE/ADR-*.md"  # After approval
+    - "PROJECT-INTERNAL/WORK-ORDERS/WO-*.md"    # After creation
+    - "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/CWO-*.md"
+    - "PROJECT-INTERNAL/CHECKPOINTS/CP-*.md"    # After creation
+    - "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md"
+    - "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md"
+
+  # AI CAN modify these
+  ai_mutable:
+    - "PROJECT-INTERNAL/KNOWLEDGE/**"
+    - "PROJECT-INTERNAL/ANALYSIS/**"
+    - "PROJECT-INTERNAL/NOTES.md"
+    - "PROJECT-INTERNAL/SCRATCH/**"            # Temporary task files (Beta phase)
+
+  # AI can modify with specific rules
+  restricted:
+    - path: "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md"
+      allowed_actions:
+        - "mark_task_complete"      # Change [ ] to [x]
+        - "add_work_order_ref"      # Add WO reference to completed task
+        - "roadmap_sync_after_wo"   # Update roadmap state after Work Orders when needed
+        - "record_no_roadmap_impact" # Record no-op roadmap review in Work Order when no update needed
+        - "revision_phase_edits"    # Only during REVISION phase
+
+    - path: "PROJECT-INTERNAL/WORK-ORDERS/registry.json"
+      allowed_actions:
+        - "add_entry"               # Add new work orders
+        - "reserve_sequence"        # Reserve sequence numbers
+        # Note: Cannot modify existing entries
+
+# =============================================================================
+# LIFECYCLE PHASES
+# =============================================================================
+
+lifecycle_phases:
+  # Phase definitions and requirements
+  phases:
+    - name: "EXPLORATION"
+      order: 1
+      description: "Fast research and proof-of-concept"
+      required:
+        - "basic_work_orders"
+        - "functional_code"
+      not_required:
+        - "documentation"
+        - "testing"
+        - "code_quality_standards"
+        - "ci_cd"
+      permitted:
+        - "quick_dirty_code"
+        - "hardcoded_values"
+        - "missing_error_handling"
+
+    - name: "PROTOTYPE"
+      order: 2
+      description: "Validate feasibility with good code"
+      required:
+        - "standard_work_orders"
+        - "good_code_quality"
+        - "reasonable_structure"
+        - "basic_error_handling"
+        - "inline_comments"
+      not_required:
+        - "comprehensive_documentation"
+        - "full_test_coverage"
+        - "ci_cd"
+        - "production_architecture"
+
+    - name: "ALPHA"
+      order: 3
+      description: "High-quality code with proper structure"
+      required:
+        - "full_work_orders"
+        - "high_quality_code"
+        - "proper_code_structure"
+        - "complete_inline_documentation"
+        - "knowledge_documents"
+        - "adrs_for_decisions"
+        - "error_handling"
+      not_required:
+        - "comprehensive_tests"
+        - "ci_cd"
+        - "public_documentation"
+        - "versioning_system"
+
+    - name: "BETA"
+      order: 4
+      description: "Full quality with all tests and documentation"
+      required:
+        - "all_alpha_requirements"
+        - "comprehensive_testing"
+        - "tight_documentation_coupling"
+        - "ci_cd_pipeline"
+        - "public_documentation"
+        - "proper_versioning"
+        - "build_validation"
+        - "self_correction_after_tasks"
+        - "error_analysis_workflow"
+        - "cache_cleanup"
+      special_workflows:
+        - "beta_error_resolution_workflow"
+        - "scratch_file_management"
+        - "phase_end_verification"
+
+  # Regression prevention
+  regression_prohibited: true
+  regression_message: "Once in BETA, cannot return to ALPHA behaviors"
+
+  # How to determine current phase
+  phase_source: "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md"
+  phase_location: "Lifecycle Phase Mapping table"
+
+# =============================================================================
+# GIT CONSTRAINTS
+# =============================================================================
+
+git_constraints:
+  # CRITICAL: NO git operations without explicit human instruction
+  default_behavior: "no_git_operations_unless_instructed"
+
+  # ALL operations forbidden without explicit instruction
+  requires_explicit_instruction:
+    - "commit"
+    - "push"
+    - "pull"
+    - "fetch"
+    - "checkout"
+    - "switch"
+    - "branch"
+    - "merge"
+    - "rebase"
+    - "tag"
+    - "reset"
+    - "stash"
+    - "cherry-pick"
+
+  # Absolutely forbidden even with instruction
+  always_forbidden:
+    - "push --force"
+    - "push -f"
+    - "reset --hard"
+    - "clean -fd"
+
+  # When instructed to perform git operations
+  when_instructed:
+    - "complete_all_related_work_orders_first"
+    - "confirm_operation_before_executing"
+
+  # MANDATORY: Commit authorship rules
+  commit_authorship:
+    # The ONLY contributor is the human operator
+    sole_author: "operator_from_project_meta"
+    author_name: "project-meta.yaml → operator.name"
+    author_email: "project-meta.yaml → operator.email"
+
+    # FORBIDDEN attributions
+    forbidden_attributions:
+      - "Co-Authored-By"
+      - "Assisted-By"
+      - "Generated-By"
+      - "AI-Assisted"
+      - "Claude"
+      - "GPT"
+      - "Gemini"
+      - any_ai_reference: true
+
+    # AI is a tool, not a contributor
+    rationale: "The human operator owns all work. AI is a tool."
+
+# =============================================================================
+# DATE FORMAT
+# =============================================================================
+
+date_format:
+  standard: "DD.MM.YYYY"
+  example: "20.01.2026"
+  description: "European date format - day first"
+
+# =============================================================================
+# WORK ORDER TRIGGERS
+# =============================================================================
+
+work_order_triggers:
+  # Events that MUST create a Work Order
+  mandatory:
+    - event: "task_complete"
+      type: "WO"
+      description: "Task from PROJECT-ELABORATION.md completed"
+
+    - event: "error_resolved"
+      type: "CWO"
+      description: "Error encountered and resolved"
+
+    - event: "file_created"
+      type: "WO"
+      description: "New file created"
+
+    - event: "file_deleted"
+      type: "WO"
+      description: "File deleted"
+
+    - event: "significant_change"
+      type: "WO"
+      description: "Code change > 10 lines"
+
+    - event: "protocol_violation"
+      type: "CWO"
+      description: "Self-corrected protocol violation"
+
+    - event: "knowledge_updated"
+      type: "WO"
+      description: "KNOWLEDGE/ document updated"
+
+    - event: "checkpoint_created"
+      type: "WO"
+      description: "Checkpoint document created"
+
+work_order_completion_requirements:
+  # Required after every Work Order
+  - "review_project_elaboration"
+  - "update_project_elaboration_if_roadmap_changed"
+  - "record_no_roadmap_impact_if_no_update_needed"
+  - "update_registry"
+  - "verify_no_unresolved_cwos"
+
+# =============================================================================
+# SELF-CORRECTION RULES
+# =============================================================================
+
+self_correction:
+  # Situations requiring self-correction
+  required_on:
+    - "missing_work_order"
+    - "unauthorized_work"
+    - "protocol_violation"
+    - "error_bypass"
+    - "modified_immutable_document"
+
+  # Required actions for self-correction
+  actions:
+    - "stop_work_immediately"
+    - "create_corrective_work_order"
+    - "revert_changes_if_possible"
+    - "notify_human_operator"
+    - "await_guidance"
+
+# =============================================================================
+# CHECKPOINT REQUIREMENTS
+# =============================================================================
+
+checkpoint_requirements:
+  # Mandatory triggers
+  triggers:
+    - "phase_complete"
+    - "major_version_increment"
+    - "adr_implementation_complete"
+    - "human_request"
+
+  # Prerequisites (ALL must be met)
+  prerequisites:
+    - "all_phase_tasks_complete"
+    - "all_work_orders_created"
+    - "project_elaboration_current"
+    - "no_unresolved_cwos"
+    - "all_tests_passing"
+    - "documentation_updated"
+    - "human_approval"
+
+# =============================================================================
+# MULTI-AGENT RULES
+# =============================================================================
+
+multi_agent:
+  enabled: true
+
+  # All agents bound by same rules
+  universal_compliance: true
+
+  coordination:
+    method: "registry.json"
+    sequence_allocation: "reserve_before_use"
+    conflict_resolution: "stop_and_notify_orchestrator"
+
+  requirements:
+    - "all_agents_read_governance"
+    - "all_agents_create_work_orders"
+    - "all_agents_coordinate_sequences"
+    - "all_agents_update_knowledge"
+
+# =============================================================================
+# VALIDATION
+# =============================================================================
+
+validation:
+  # Checks before session end
+  on_session_end:
+    - "all_work_orders_complete"
+    - "registry_current"
+    - "no_unresolved_cwos"
+    - "knowledge_updated_if_new_learnings"
+    - "project_elaboration_status_accurate"
+
+  # Checks before checkpoint
+  on_checkpoint:
+    - "all_prerequisites_met"
+    - "all_tests_pass"
+    - "human_approval_obtained"
+
+# =============================================================================
+# PROHIBITED ACTIONS
+# =============================================================================
+
+prohibited:
+  - action: "work_not_in_backlog"
+    description: "Working on tasks not in PROJECT-ELABORATION.md"
+
+  - action: "modify_governance"
+    description: "Modifying GOVERNANCE/ documents"
+
+  - action: "ignore_error"
+    description: "Proceeding past error without CWO"
+
+  - action: "skip_work_order"
+    description: "Completing work without Work Order"
+
+  - action: "skip_project_elaboration_sync"
+    description: "Completing a Work Order without reviewing PROJECT-ELABORATION.md or recording no roadmap impact"
+
+  - action: "modify_immutable"
+    description: "Modifying immutable documents after creation"
+
+  - action: "improvise_solutions"
+    description: "Creating solutions for undocumented situations"
+
+# =============================================================================
+# ENVIRONMENT AWARENESS
+# =============================================================================
+
+environment:
+  # Project-specific environment is in PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md
+  config_file: "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md"
+
+  # Before system operations, AI MUST:
+  before_operations:
+    - "read_environment_md"
+    - "verify_paths_exist"
+    - "check_tool_versions"
+    - "never_assume_state"
+
+  # Default development environment
+  development:
+    os: "macOS"
+    architecture: "Apple Silicon (M1/M2/M3/M4)"
+
+  # Default deployment environment
+  deployment:
+    os: "Debian 13 (Trixie)"
+    target: "VPS"
+
+  # Default tool versions
+  versions:
+    go: "1.25.4"
+    rust: "1.92.0"
+    python: "3.13"
+    node: "24.12.0"
+    pnpm: "10+"
+
+  # Security
+  credentials:
+    never_log: true
+    never_commit: true
+    production_access: "requires_explicit_instruction"

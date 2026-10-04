@@ -1,0 +1,144 @@
+# sync-manifest.yaml
+# Defines what files sync between template and derived projects
+
+version: "1.0.0"
+
+# =============================================================================
+# SYNC CATEGORIES
+# =============================================================================
+
+# Files that ALWAYS sync from template to projects
+always_sync:
+  - "CLAUDE.md"
+  - "AGENTS.md"
+  - "SECURITY.md"
+  - "CONTRIBUTING.md"
+  - "CODE_OF_CONDUCT.md"
+  - "PROJECT-INTERNAL/AGENTS.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/CHECKPOINT-PROTOCOL.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/DOCUMENTATION-PROTOCOL.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/LIFECYCLE-PHASES-PROTOCOL.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/BETA-PHASE-PROTOCOL.md"
+  - "PROJECT-INTERNAL/GOVERNANCE/AGENTS.md"
+  - "PROJECT-INTERNAL/ANALYSIS/AGENTS.md"
+  - "PROJECT-INTERNAL/ANALYSIS/analysis-report-template.md"
+  - "PROJECT-INTERNAL/ARCHITECTURE/adr-template.md"
+  - "PROJECT-INTERNAL/ARCHITECTURE/ADR-000-record-architecture-decisions.md"
+  - "PROJECT-INTERNAL/ARCHITECTURE/AGENTS.md"
+  - "PROJECT-INTERNAL/WORK-ORDERS/work-order-template.md"
+  - "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/corrective-work-order-template.md"
+  - "PROJECT-INTERNAL/WORK-ORDERS/AGENTS.md"
+  - "PROJECT-INTERNAL/CHECKPOINTS/checkpoint-template.md"
+  - "PROJECT-INTERNAL/CHECKPOINTS/AGENTS.md"
+  - "PROJECT-INTERNAL/KNOWLEDGE/AGENTS.md"
+  - "PROJECT-INTERNAL/MANAGEMENT/AGENTS.md"
+  - "PROJECT-INTERNAL/GUIDES/AGENTS.md"
+  - "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md"
+  - "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md"
+  - "PROJECT-INTERNAL/SCRATCH/AGENTS.md"
+  - "PROJECT-INTERNAL/SCRATCH/.gitkeep"
+  - "PROJECT-INTERNAL/SCRATCH/TASK-TEMPLATE.md"
+  - "PROJECT-INTERNAL/AI/AGENTS.md"
+  - "PROJECT-INTERNAL/AI/functions/work-orders.json"
+  - "PROJECT-INTERNAL/AI/functions/registry.json"
+  - "PROJECT-INTERNAL/AI/functions/reporting.json"
+  - ".template/agent-rules.yaml"
+  - ".template/sync-manifest.yaml"
+
+# Files synced based on project language
+conditional_sync:
+  rust:
+    - "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md"
+  go:
+    - "PROJECT-INTERNAL/GUIDES/GO-ENTERPRISE-CODE-DOCTRINE.md"
+  python:
+    - "PROJECT-INTERNAL/GUIDES/PYTHON-ENTERPRISE-CODE-DOCTRINE.md"
+  node:
+    - "PROJECT-INTERNAL/GUIDES/NODE-ENTERPRISE-CODE-DOCTRINE.md"
+    - "PROJECT-INTERNAL/GUIDES/HTML-CSS-ENTERPRISE-CODE-DOCTRINE.md"
+  polyglot:
+    - "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md"
+    - "PROJECT-INTERNAL/GUIDES/GO-ENTERPRISE-CODE-DOCTRINE.md"
+    - "PROJECT-INTERNAL/GUIDES/PYTHON-ENTERPRISE-CODE-DOCTRINE.md"
+    - "PROJECT-INTERNAL/GUIDES/NODE-ENTERPRISE-CODE-DOCTRINE.md"
+    - "PROJECT-INTERNAL/GUIDES/HTML-CSS-ENTERPRISE-CODE-DOCTRINE.md"
+
+# Files that NEVER sync (project-specific)
+never_sync:
+  - "project-meta.yaml"
+  - "README.md"
+  - "VERSION"
+  - "LICENSE"
+  - "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md"
+  - "PROJECT-INTERNAL/MANAGEMENT/VISION.md"
+  - "PROJECT-INTERNAL/MANAGEMENT/ROADMAP.md"
+  - "PROJECT-INTERNAL/MANAGEMENT/PROJECT-RULES.md"
+  - "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md"
+  - "PROJECT-INTERNAL/ANALYSIS/20*.md"
+  - "PROJECT-INTERNAL/ANALYSIS/phase-*.md"
+  - "PROJECT-INTERNAL/ANALYSIS/*-profiling-results.md"
+  - "PROJECT-INTERNAL/ANALYSIS/*-strategic-review.md"
+  - "PROJECT-INTERNAL/ANALYSIS/*-progress-summary.md"
+  - "PROJECT-INTERNAL/ANALYSIS/*-audit.md"
+  - "PROJECT-INTERNAL/ARCHITECTURE/ADR-*.md"  # Except ADR-000
+  - "PROJECT-INTERNAL/WORK-ORDERS/registry.json"
+  - "PROJECT-INTERNAL/WORK-ORDERS/WO-*.md"
+  - "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/CWO-*.md"
+  - "PROJECT-INTERNAL/CHECKPOINTS/CP-*.md"
+  - "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPER-GUIDE.md"
+  - "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPMENT-PRACTICES.md"
+  - "PROJECT-INTERNAL/KNOWLEDGE/GOTCHAS.md"
+  - "PROJECT-INTERNAL/KNOWLEDGE/ERROR-CATALOG.md"
+  - "PROJECT-INTERNAL/KNOWLEDGE/TOOL-NOTES.md"
+  - "PROJECT-INTERNAL/NOTES.md"
+  - "PROJECT-INTERNAL/SCRATCH/TASK-*.md"  # Except template
+  - "PROJECT-INTERNAL/SCRATCH/ANALYSIS-*.md"
+  - "src/**"
+  - "tests/**"
+  - "Cargo.toml"
+  - "go.mod"
+  - "package.json"
+  - "pyproject.toml"
+
+# Files that merge (combine content rather than overwrite)
+merge_sync:
+  - path: "Justfile"
+    strategy: "append_missing_targets"
+  - path: ".gitignore"
+    strategy: "union_lines"
+
+# =============================================================================
+# UPSTREAM CONTRIBUTION
+# =============================================================================
+
+# Files that can be contributed back to template
+upstream_candidates:
+  auto_contribute:
+    # These can be contributed without review
+    - "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPMENT-PRACTICES.md"
+
+  review_required:
+    # These need maintainer review before merging to template
+    - "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md"
+    - ".template/agent-rules.yaml"
+
+# =============================================================================
+# SYNC BEHAVIOR
+# =============================================================================
+
+sync_options:
+  # Create backup before overwriting
+  backup_before_sync: true
+  backup_directory: ".template/sync-backups"
+
+  # Strategy when project has local modifications
+  conflict_strategy: "template_wins_with_backup"
+
+  # Show diff before applying
+  show_diff: true
+
+  # Require confirmation
+  require_confirmation: true

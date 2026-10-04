@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Work Order Functions",
+  "description": "Function schemas for creating Work Orders and Corrective Work Orders",
+  "version": "1.0.0",
+  "functions": [
+    {
+      "name": "createWorkOrder",
+      "description": "Creates a new Work Order document for completed tasks. Must be called after every task completion per AI-INSTRUCTIONS.md Article 6.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "sequenceNumber": {
+            "type": "integer",
+            "description": "The reserved sequence number from registry (e.g., 1, 2, 3)"
+          },
+          "year": {
+            "type": "string",
+            "pattern": "^[0-9]{4}$",
+            "description": "Four-digit year (e.g., '2026')"
+          },
+          "class": {
+            "type": "string",
+            "description": "Classification code from project-meta.yaml work_orders.class_prefix"
+          },
+          "referenceNumber": {
+            "type": "string",
+            "description": "Reference number from project-meta.yaml work_orders.reference_prefix with sequence"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "ISO 8601 date (YYYY-MM-DD)"
+          },
+          "executor": {
+            "type": "string",
+            "description": "Operator name from project-meta.yaml (operator.name)"
+          },
+          "subject": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "One-line description of work performed"
+          },
+          "authorization": {
+            "type": "object",
+            "properties": {
+              "taskReference": {
+                "type": "string",
+                "description": "Reference to PROJECT-ELABORATION.md task (e.g., 'Phase 1, Point 2.3')"
+              },
+              "authorizedBy": {
+                "type": "string",
+                "description": "Human name who authorized or 'Backlog' for pre-approved tasks"
+              }
+            },
+            "required": ["taskReference", "authorizedBy"]
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description: what was implemented, why this approach, decisions made"
+          },
+          "filesChanged": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "description": "Relative path to file"
+                },
+                "action": {
+                  "type": "string",
+                  "enum": ["Created", "Modified", "Deleted", "Renamed"],
+                  "description": "Type of change"
+                },
+                "linesChanged": {
+                  "type": "string",
+                  "pattern": "^[+-]?[0-9]+,\\s*[+-]?[0-9]+$",
+                  "description": "Lines added/removed (e.g., '+50, -10')"
+                }
+              },
+              "required": ["path", "action", "linesChanged"]
+            },
+            "description": "List of all files changed"
+          },
+          "tests": {
+            "type": "object",
+            "properties": {
+              "unitTestsPass": { "type": "boolean" },
+              "integrationTestsPass": { "type": "boolean" },
+              "noRegressions": { "type": "boolean" },
+              "newTestsAdded": { "type": "boolean" }
+            },
+            "required": ["unitTestsPass", "integrationTestsPass", "noRegressions"]
+          },
+          "verification": {
+            "type": "object",
+            "properties": {
+              "buildStatus": {
+                "type": "string",
+                "enum": ["Pass", "Fail", "N/A"]
+              },
+              "testStatus": {
+                "type": "string",
+                "enum": ["Pass", "Fail", "N/A"]
+              },
+              "manualVerification": {
+                "type": "string",
+                "description": "Description of manual verification if applicable"
+              }
+            },
+            "required": ["buildStatus", "testStatus"]
+          },
+          "timeExpenditure": {
+            "type": "object",
+            "properties": {
+              "estimated": {
+                "type": "string",
+                "description": "Estimated time for a human to perform a task (e.g., '2h 30m')"
+              },
+              "actual": {
+                "type": "string",
+                "description": "Actual time spent; adjusted for how much a human would take to perform a task(e.g., '3h 15m')"
+              }
+            },
+            "required": ["actual"]
+          },
+          "materialExpenditure": {
+            "type": "string",
+            "default": "Consumables",
+            "description": "Resources consumed (default: 'Consumables')"
+          },
+          "documentationImpact": {
+            "type": "object",
+            "properties": {
+              "userFacingChange": { "type": "boolean" },
+              "docsUpdated": { "type": "boolean" },
+              "filesChanged": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional observations, recommendations, or follow-up items"
+          },
+          "relatedDocuments": {
+            "type": "object",
+            "properties": {
+              "adrsReferenced": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "previousWOs": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "cwosResolved": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "required": [
+          "sequenceNumber",
+          "year",
+          "class",
+          "referenceNumber",
+          "date",
+          "executor",
+          "subject",
+          "authorization",
+          "description",
+          "filesChanged",
+          "tests",
+          "verification",
+          "timeExpenditure"
+        ]
+      }
+    },
+    {
+      "name": "createCorrectiveWorkOrder",
+      "description": "Creates a Corrective Work Order for error remediation. Required per AI-INSTRUCTIONS.md Article 7 when errors are discovered.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "sequenceNumber": {
+            "type": "integer",
+            "description": "The reserved sequence number for CWO"
+          },
+          "year": {
+            "type": "string",
+            "pattern": "^[0-9]{4}$"
+          },
+          "class": {
+            "type": "string"
+          },
+          "referenceNumber": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "executor": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "errorClassification": {
+            "type": "object",
+            "properties": {
+              "severity": {
+                "type": "string",
+                "enum": ["Critical", "High", "Medium", "Low"],
+                "description": "Impact severity of the error"
+              },
+              "category": {
+                "type": "string",
+                "enum": ["Logic Error", "Type Error", "Integration Error", "Configuration Error", "Documentation Error", "Protocol Violation", "Other"],
+                "description": "Category of error"
+              },
+              "discoveredBy": {
+                "type": "string",
+                "description": "How the error was discovered (e.g., 'Build failure', 'Test failure', 'Manual review')"
+              }
+            },
+            "required": ["severity", "category", "discoveredBy"]
+          },
+          "rootCauseAnalysis": {
+            "type": "object",
+            "properties": {
+              "immeditateCause": {
+                "type": "string",
+                "description": "What directly caused the error"
+              },
+              "underlyingCause": {
+                "type": "string",
+                "description": "Why the immediate cause occurred"
+              },
+              "contributingFactors": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "required": ["immeditateCause"]
+          },
+          "correction": {
+            "type": "object",
+            "properties": {
+              "actionTaken": {
+                "type": "string",
+                "description": "What was done to fix the error"
+              },
+              "filesChanged": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": { "type": "string" },
+                    "action": { "type": "string" },
+                    "linesChanged": { "type": "string" }
+                  }
+                }
+              },
+              "verificationSteps": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "required": ["actionTaken", "filesChanged"]
+          },
+          "prevention": {
+            "type": "object",
+            "properties": {
+              "lessonsLearned": {
+                "type": "string",
+                "description": "What can be learned from this error"
+              },
+              "preventiveMeasures": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Steps to prevent recurrence"
+              },
+              "addToGotchas": {
+                "type": "boolean",
+                "description": "Should this be added to GOTCHAS.md?"
+              },
+              "addToErrorCatalog": {
+                "type": "boolean",
+                "description": "Should this be added to ERROR-CATALOG.md?"
+              }
+            },
+            "required": ["lessonsLearned"]
+          },
+          "timeExpenditure": {
+            "type": "object",
+            "properties": {
+              "diagnosisTime": { "type": "string" },
+              "correctionTime": { "type": "string" },
+              "verificationTime": { "type": "string" },
+              "totalTime": { "type": "string" }
+            },
+            "required": ["totalTime"]
+          },
+          "relatedDocuments": {
+            "type": "object",
+            "properties": {
+              "originalWO": {
+                "type": "string",
+                "description": "WO that introduced the error (if known)"
+              },
+              "relatedCWOs": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "required": [
+          "sequenceNumber",
+          "year",
+          "class",
+          "referenceNumber",
+          "date",
+          "executor",
+          "subject",
+          "errorClassification",
+          "rootCauseAnalysis",
+          "correction",
+          "prevention",
+          "timeExpenditure"
+        ]
+      }
+    }
+  ]
+}

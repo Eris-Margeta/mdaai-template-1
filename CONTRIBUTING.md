@@ -1,0 +1,1 @@
+Submit a pull request to this canonical template repository. Preserve governing rules, source provenance and license notices. Adoption is explicit; publication does not update downstream authority. Register reviewed commits separately through the mdaai-templates catalog PR process.

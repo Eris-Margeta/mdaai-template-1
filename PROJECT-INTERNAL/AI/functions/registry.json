@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Registry Management Functions",
+  "description": "Function schemas for managing the Work Order registry",
+  "version": "1.0.0",
+  "functions": [
+    {
+      "name": "reserveSequenceNumber",
+      "description": "Reserves the next available sequence number for a Work Order. MUST be called before creating a WO to prevent conflicts in multi-agent scenarios.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "description": "Unique identifier for the agent making the reservation"
+          },
+          "orderType": {
+            "type": "string",
+            "enum": ["WO", "CWO", "DWO"],
+            "description": "Type of work order being reserved"
+          },
+          "reservationDuration": {
+            "type": "integer",
+            "default": 3600,
+            "description": "How long to hold the reservation in seconds (default: 1 hour)"
+          }
+        },
+        "required": ["agentId", "orderType"]
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "sequenceNumber": {
+            "type": "integer",
+            "description": "The reserved sequence number"
+          },
+          "reservationId": {
+            "type": "string",
+            "description": "Unique ID for this reservation"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the reservation expires"
+          }
+        }
+      }
+    },
+    {
+      "name": "registerWorkOrder",
+      "description": "Registers a completed Work Order in the registry. Called after the WO document is created.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "workOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$",
+            "description": "Work Order ID (e.g., 'WO-2026-001')"
+          },
+          "reservationId": {
+            "type": "string",
+            "description": "The reservation ID from reserveSequenceNumber"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["WO", "CWO", "DWO"]
+              },
+              "subject": {
+                "type": "string"
+              },
+              "executor": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["COMPLETE", "PENDING", "VOID"]
+              },
+              "filePath": {
+                "type": "string",
+                "description": "Path to the WO document"
+              },
+              "taskReference": {
+                "type": "string",
+                "description": "Reference to PROJECT-ELABORATION.md task"
+              },
+              "timeSpent": {
+                "type": "string",
+                "description": "Actual time spent"
+              },
+              "filesChanged": {
+                "type": "integer",
+                "description": "Number of files changed"
+              }
+            },
+            "required": ["type", "subject", "executor", "date", "status", "filePath"]
+          }
+        },
+        "required": ["workOrderId", "metadata"]
+      }
+    },
+    {
+      "name": "updateStatistics",
+      "description": "Updates the registry statistics after registering work orders.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "recalculate": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to recalculate all statistics from workOrders array"
+          }
+        }
+      }
+    },
+    {
+      "name": "releaseReservation",
+      "description": "Releases a sequence number reservation if the work order is not created.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "reservationId": {
+            "type": "string",
+            "description": "The reservation ID to release"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why the reservation is being released"
+          }
+        },
+        "required": ["reservationId"]
+      }
+    },
+    {
+      "name": "registerAgent",
+      "description": "Registers an agent in the registry for multi-agent tracking.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "description": "Unique identifier for the agent"
+          },
+          "agentType": {
+            "type": "string",
+            "description": "Type/model of agent for internal tracking only (never as executor/author)"
+          },
+          "parentAgentId": {
+            "type": "string",
+            "description": "ID of parent agent if this is a sub-agent"
+          },
+          "assignedTasks": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Task references assigned to this agent"
+          }
+        },
+        "required": ["agentId", "agentType"]
+      }
+    },
+    {
+      "name": "getRegistryState",
+      "description": "Retrieves the current state of the registry for reading.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "includeWorkOrders": {
+            "type": "boolean",
+            "default": true
+          },
+          "includeReservations": {
+            "type": "boolean",
+            "default": true
+          },
+          "includeStatistics": {
+            "type": "boolean",
+            "default": true
+          },
+          "includeAgents": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+# ==========================================
+# PROJECT IDENTITY
+# ==========================================
+# This file defines the project identity and is NEVER synced from template
+
+# 1. CORE METADATA
+name: "project-name"
+description: "Brief description of the project"
+status: "Planning"
+version: "1.0.0"
+created_at: "DD.MM.YYYY"
+last_updated: "DD.MM.YYYY"
+
+# 2. OPERATOR (Repository Owner)
+operator:
+  name: "Eris Margeta"
+  email: "eris.margeta@gmail.com"
+  organization: "TEJL d.o.o."
+
+client: "Client Name / Internal / Open Source"
+
+# 3. PROJECT CLASSIFICATION
+classification:
+  language: "rust"           # rust | go | python | node | polyglot
+  visibility: "oss"          # oss | commercial
+  type: "application"        # application | library | service | tool
+
+# 4. WORK ORDER CLASSIFICATION CODES
+work_orders:
+  class_prefix: "001-01"
+  reference_prefix: "251-01-01"
+  current_year: "26"
+  sequence_start: 1
+
+# 5. STRUCTURE PATHS
+structure:
+  work_orders: "./PROJECT-INTERNAL/WORK-ORDERS/"
+  docs: "./PROJECT-INTERNAL/MANAGEMENT/"
+  analysis: "./PROJECT-INTERNAL/ANALYSIS/"
+  guides: "./PROJECT-INTERNAL/GUIDES/"
+  architecture: "./PROJECT-INTERNAL/ARCHITECTURE/"
+  knowledge: "./PROJECT-INTERNAL/KNOWLEDGE/"
+  checkpoints: "./PROJECT-INTERNAL/CHECKPOINTS/"
+
+# 6. TECH STACK
+tech_stack:
+  primary_language: ""
+  backend: ""
+  frontend: ""
+  database: ""
+  infrastructure: ""
+
+# 7. TEMPLATE SYNC CONFIGURATION
+template:
+  source: "https://github.com/Eris-Margeta/repo-template-core"
+  last_sync: null
+  auto_sync: false
+
+# 8. GOVERNANCE SETTINGS
+governance:
+  require_work_orders: true
+  require_checkpoints: true
+  require_adrs: true
+  strict_mode: true
+  multi_agent_enabled: true
+
+# 9. LINKS
+repo: "https://github.com/Eris-Margeta/your-project"
+homepage: ""
+license: "MIT"
+
+tags:
+  - "template"
+  - "TEJL"

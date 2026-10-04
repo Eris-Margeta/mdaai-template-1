@@ -1,0 +1,17 @@
+{
+  "project": "project-name",
+  "protocol_version": "1.0.0",
+  "created": "YYYY-MM-DDTHH:MM:SSZ",
+  "lastUpdated": "YYYY-MM-DDTHH:MM:SSZ",
+  "nextSequence": 1,
+  "workOrders": [],
+  "reservations": [],
+  "statistics": {
+    "totalWorkOrders": 0,
+    "totalCorrectiveOrders": 0,
+    "totalDiagnosticOrders": 0,
+    "correctiveRate": "0%",
+    "averageTimePerTask": "0h 0m"
+  },
+  "agents": []
+}

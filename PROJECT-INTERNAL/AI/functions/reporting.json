@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reporting Functions",
+  "description": "Function schemas for generating reports from the Work Order system",
+  "version": "1.0.0",
+  "functions": [
+    {
+      "name": "generateSummaryReport",
+      "description": "Generates a summary report of all work orders in the registry.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "dateRange": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date (inclusive)"
+              },
+              "to": {
+                "type": "string",
+                "format": "date",
+                "description": "End date (inclusive)"
+              }
+            }
+          },
+          "filterByType": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["WO", "CWO", "DWO"]
+            },
+            "description": "Filter by work order types"
+          },
+          "filterByExecutor": {
+            "type": "string",
+            "description": "Filter by executor name"
+          },
+          "filterByStatus": {
+            "type": "string",
+            "enum": ["COMPLETE", "PENDING", "VOID"],
+            "description": "Filter by status"
+          },
+          "groupBy": {
+            "type": "string",
+            "enum": ["date", "executor", "type", "phase"],
+            "description": "How to group results"
+          },
+          "outputFormat": {
+            "type": "string",
+            "enum": ["markdown", "json", "csv"],
+            "default": "markdown",
+            "description": "Output format for the report"
+          }
+        }
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "object",
+            "properties": {
+              "totalWorkOrders": { "type": "integer" },
+              "totalCorrectiveOrders": { "type": "integer" },
+              "totalDiagnosticOrders": { "type": "integer" },
+              "correctiveRate": { "type": "string" },
+              "totalTimeSpent": { "type": "string" },
+              "filesChanged": { "type": "integer" }
+            }
+          },
+          "workOrders": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "name": "generateComplianceReport",
+      "description": "Generates a compliance report checking adherence to governance protocols.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "checkItems": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "work_order_completeness",
+                "authorization_chain",
+                "registry_consistency",
+                "file_change_tracking",
+                "test_verification",
+                "documentation_sync",
+                "cwo_follow_up",
+                "gotchas_updated",
+                "error_catalog_updated"
+              ]
+            },
+            "description": "Which compliance checks to run"
+          },
+          "dateRange": {
+            "type": "object",
+            "properties": {
+              "from": { "type": "string", "format": "date" },
+              "to": { "type": "string", "format": "date" }
+            }
+          },
+          "strictMode": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to use strict compliance checking"
+          }
+        }
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "overallCompliance": {
+            "type": "string",
+            "enum": ["COMPLIANT", "WARNINGS", "VIOLATIONS"]
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Compliance score percentage"
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "check": { "type": "string" },
+                "status": { "type": "string", "enum": ["PASS", "WARN", "FAIL"] },
+                "message": { "type": "string" },
+                "affectedItems": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "recommendations": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    {
+      "name": "generateCheckpointReport",
+      "description": "Generates a report for checkpoint documentation, summarizing all work since last checkpoint.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "checkpointId": {
+            "type": "string",
+            "description": "ID of the checkpoint being created"
+          },
+          "previousCheckpointId": {
+            "type": "string",
+            "description": "ID of the previous checkpoint to diff against"
+          },
+          "includeMetrics": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": ["checkpointId"]
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "workOrdersSinceLastCheckpoint": { "type": "integer" },
+          "tasksCompleted": { "type": "array", "items": { "type": "string" } },
+          "errorsResolved": { "type": "array", "items": { "type": "string" } },
+          "filesChanged": { "type": "array", "items": { "type": "string" } },
+          "totalTimeSpent": { "type": "string" },
+          "documentationUpdates": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    {
+      "name": "generateAgentActivityReport",
+      "description": "Generates a report of agent activity for multi-agent sessions.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "description": "Multi-agent session ID"
+          },
+          "includeSubAgents": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "totalAgents": { "type": "integer" },
+          "agentTree": {
+            "type": "object",
+            "description": "Hierarchical view of orchestrator and sub-agents"
+          },
+          "workOrdersByAgent": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "agents": { "type": "array", "items": { "type": "string" } },
+                "resolution": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

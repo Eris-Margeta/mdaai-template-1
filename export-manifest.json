@@ -1,0 +1,970 @@
+{
+  "schemaVersion": 1,
+  "repository": "Eris-Margeta/mdaai-template-1",
+  "pythonVersion": "3.13.14",
+  "scaffold": "MDAAI-MONOREPO/repo-template; private operations excluded; fresh history",
+  "files": [
+    {
+      "path": ".github/dependabot.example",
+      "sourcePath": ".github/dependabot.example",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "03fcb1e13a1ea57e84b4ebc76db876d1bf0a1cd7807e38200b1904cd9b36269a",
+      "sha256": "03fcb1e13a1ea57e84b4ebc76db876d1bf0a1cd7807e38200b1904cd9b36269a",
+      "size": 2119,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".github/workflows/.ci.example",
+      "sourcePath": ".github/workflows/.ci.example",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "a04802c934e5adcbe166318373b560085cc4a9d6c2cd7c66f0720c6bf31d62fd",
+      "sha256": "a04802c934e5adcbe166318373b560085cc4a9d6c2cd7c66f0720c6bf31d62fd",
+      "size": 2033,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".github/workflows/.release.example",
+      "sourcePath": ".github/workflows/.release.example",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "9cb0480ef82c335f85f51e9a77b018cca0de412f169ab7acab548165697ada25",
+      "sha256": "9cb0480ef82c335f85f51e9a77b018cca0de412f169ab7acab548165697ada25",
+      "size": 2496,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".github/workflows/.sync-repo.example",
+      "sourcePath": ".github/workflows/.sync-repo.example",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "30a41eb23ef9c43a42644026fafe1d0abfc6f07b3d9fe1fbc3b2cf4cd2d5c2a9",
+      "sha256": "30a41eb23ef9c43a42644026fafe1d0abfc6f07b3d9fe1fbc3b2cf4cd2d5c2a9",
+      "size": 1808,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".gitignore",
+      "sourcePath": ".gitignore",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "5e2d041572146c3983c96fa8426dbe7a1367025f0df53f32bf5616b3520c794e",
+      "sha256": "5e2d041572146c3983c96fa8426dbe7a1367025f0df53f32bf5616b3520c794e",
+      "size": 3442,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": ".python-version",
+      "sourcePath": ".python-version",
+      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+      "sourceSha256": "f8faecf2505680716c6279bf2cdec3d5a5ba2ba852f0d7df45d51ac1ce8d9ade",
+      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "role": "required",
+      "sha256": "f8faecf2505680716c6279bf2cdec3d5a5ba2ba852f0d7df45d51ac1ce8d9ade",
+      "size": 8
+    },
+    {
+      "path": ".template/agent-rules.yaml",
+      "sourcePath": ".template/agent-rules.yaml",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "a991fa542005132cb49ee0a6a4f2c4588881d0977b0c9f97197929843fcb59f5",
+      "sha256": "a991fa542005132cb49ee0a6a4f2c4588881d0977b0c9f97197929843fcb59f5",
+      "size": 13945,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": ".template/scripts/sync-downstream.sh",
+      "sourcePath": ".template/scripts/sync-downstream.sh",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "77c36f4145c3a72bc0c3083d562de931c0613109c183e8db0ccc74b9f811272f",
+      "sha256": "77c36f4145c3a72bc0c3083d562de931c0613109c183e8db0ccc74b9f811272f",
+      "size": 6293,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".template/scripts/sync-upstream.sh",
+      "sourcePath": ".template/scripts/sync-upstream.sh",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "21bcbe960a08680b79de866dea6db734c70125bde3eb49ede7b90beca30d0691",
+      "sha256": "21bcbe960a08680b79de866dea6db734c70125bde3eb49ede7b90beca30d0691",
+      "size": 2483,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".template/scripts/validate.sh",
+      "sourcePath": ".template/scripts/validate.sh",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "26c691a363f5b64fdb877789b12e78b7788dad22a678d093aef1d4beddddf45a",
+      "sha256": "26c691a363f5b64fdb877789b12e78b7788dad22a678d093aef1d4beddddf45a",
+      "size": 8084,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": ".template/sync-manifest.yaml",
+      "sourcePath": ".template/sync-manifest.yaml",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "afb06ee6f171b01ebdeb057c8368743d6e903b559002e6594828db7aa93f8db5",
+      "sha256": "afb06ee6f171b01ebdeb057c8368743d6e903b559002e6594828db7aa93f8db5",
+      "size": 5504,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "AGENTS.md",
+      "sourcePath": "AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "d9087e12d0f79ea8e87c2c147a1d0a5907579c1854e71ffc49f3533096801982",
+      "sha256": "d9087e12d0f79ea8e87c2c147a1d0a5907579c1854e71ffc49f3533096801982",
+      "size": 8114,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sourcePath": "CLAUDE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "eba8f227df0b82c478ac75f0c22054d8ec9658108d6d907b025d64153eb4d8aa",
+      "sha256": "eba8f227df0b82c478ac75f0c22054d8ec9658108d6d907b025d64153eb4d8aa",
+      "size": 389,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sourcePath": "CODE_OF_CONDUCT.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "99355d573d66ad348eaecb5fb2714fb303984349e544beae61ca9b1dec77500a",
+      "sha256": "99355d573d66ad348eaecb5fb2714fb303984349e544beae61ca9b1dec77500a",
+      "size": 1994,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sourcePath": "CONTRIBUTING.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "522e364d883e132ab096088ac02c5ed7a6b3db226eb95426998830e19c2309ba",
+      "sha256": "363bab5ce3c59c7d19d5f39b7a972dff4fe9745a0ed49f2a7874cc69684ff0f1",
+      "size": 283,
+      "transformation": "none; owner-authorized Apache-2.0 packaging/Python pin/documentation revision; original source hash retained",
+      "role": "required"
+    },
+    {
+      "path": "Justfile",
+      "sourcePath": "Justfile",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "9cbe7fc7aaa282e3bcd8736ae1b26ff9e87848407ed1b8384737f903bc1e30ff",
+      "sha256": "9cbe7fc7aaa282e3bcd8736ae1b26ff9e87848407ed1b8384737f903bc1e30ff",
+      "size": 4301,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "LICENSE",
+      "sourcePath": "LICENSE",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "size": 11358,
+      "transformation": "none; owner-authorized Apache-2.0 packaging/Python pin/documentation revision; original source hash retained",
+      "role": "required"
+    },
+    {
+      "path": "NOTICE",
+      "sourcePath": "NOTICE",
+      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+      "sourceSha256": "f14ad062071a1f15472d715a3e2dcaf8942a518ce08faa8af6a9b23744cc519f",
+      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "role": "required",
+      "sha256": "f14ad062071a1f15472d715a3e2dcaf8942a518ce08faa8af6a9b23744cc519f",
+      "size": 323
+    },
+    {
+      "path": "PROJECT-INTERNAL/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "ab8964b710c4adc549d6d5a3867522910c66878684f8a6585d894e038097478b",
+      "sha256": "ab8964b710c4adc549d6d5a3867522910c66878684f8a6585d894e038097478b",
+      "size": 3950,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/AI/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/AI/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "0281eb67bfce2f223f205e1c0cbd02a9a0d20a358bdf15f8bcfa0b2899cd1398",
+      "sha256": "0281eb67bfce2f223f205e1c0cbd02a9a0d20a358bdf15f8bcfa0b2899cd1398",
+      "size": 2439,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/AI/functions/registry.json",
+      "sourcePath": "PROJECT-INTERNAL/AI/functions/registry.json",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "26f0830c540d90622037bb32e4a00ff80baa76e74064e065cd22c766c687c09b",
+      "sha256": "26f0830c540d90622037bb32e4a00ff80baa76e74064e065cd22c766c687c09b",
+      "size": 6005,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/AI/functions/reporting.json",
+      "sourcePath": "PROJECT-INTERNAL/AI/functions/reporting.json",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "891e8b337dcf8d922e0ed6dafa5d9e6f6b204ef2e78386932cb4b57967e321ff",
+      "sha256": "891e8b337dcf8d922e0ed6dafa5d9e6f6b204ef2e78386932cb4b57967e321ff",
+      "size": 7289,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/AI/functions/work-orders.json",
+      "sourcePath": "PROJECT-INTERNAL/AI/functions/work-orders.json",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "4584cc00e85c759be5e9f51fda8df8dbd573f4978ecf3cf61e7788eb8661ad26",
+      "sha256": "4584cc00e85c759be5e9f51fda8df8dbd573f4978ecf3cf61e7788eb8661ad26",
+      "size": 11445,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/ANALYSIS/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/ANALYSIS/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "9cc1543cc50cca13ddadca7485de7a2c7a65c63d3639314fcc16a9fdc919b993",
+      "sha256": "9cc1543cc50cca13ddadca7485de7a2c7a65c63d3639314fcc16a9fdc919b993",
+      "size": 2641,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/ANALYSIS/analysis-report-template.md",
+      "sourcePath": "PROJECT-INTERNAL/ANALYSIS/analysis-report-template.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "9f902e4ba0bdae06df4d61a286f88c1fe829379561b662f596e5d6dfc4d16f4b",
+      "sha256": "9f902e4ba0bdae06df4d61a286f88c1fe829379561b662f596e5d6dfc4d16f4b",
+      "size": 1863,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/ARCHITECTURE/ADR-000-record-architecture-decisions.md",
+      "sourcePath": "PROJECT-INTERNAL/ARCHITECTURE/ADR-000-record-architecture-decisions.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "df06ede84cdccf25750f70b815f8a66011627970f6bfef94f13b7df201411e80",
+      "sha256": "df06ede84cdccf25750f70b815f8a66011627970f6bfef94f13b7df201411e80",
+      "size": 3185,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/ARCHITECTURE/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/ARCHITECTURE/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "c2cfa9f3a2fc2cfeda3a3f1c404e3e58277816d9b5fc9701aff295dbc7175beb",
+      "sha256": "c2cfa9f3a2fc2cfeda3a3f1c404e3e58277816d9b5fc9701aff295dbc7175beb",
+      "size": 2335,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/ARCHITECTURE/adr-template.md",
+      "sourcePath": "PROJECT-INTERNAL/ARCHITECTURE/adr-template.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "5d6080a2629f946d9a933e6ec4c28c13c0eb64dfeb577eb83e792b89f70e6308",
+      "sha256": "5d6080a2629f946d9a933e6ec4c28c13c0eb64dfeb577eb83e792b89f70e6308",
+      "size": 3339,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/CHECKPOINTS/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/CHECKPOINTS/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "bda6b6e9eecd5e17dd14f3d1cc8b503a1b058b26b7a5cab59d3d3873bfced142",
+      "sha256": "bda6b6e9eecd5e17dd14f3d1cc8b503a1b058b26b7a5cab59d3d3873bfced142",
+      "size": 2554,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/CHECKPOINTS/checkpoint-template.md",
+      "sourcePath": "PROJECT-INTERNAL/CHECKPOINTS/checkpoint-template.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "7923156d37cfee258e528eddd0d62c2eb24bb12126c359801fcaa2c5c67687dc",
+      "sha256": "7923156d37cfee258e528eddd0d62c2eb24bb12126c359801fcaa2c5c67687dc",
+      "size": 4743,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/CLASSIFICATION-REGULATIONS.md",
+      "sourcePath": "PROJECT-INTERNAL/CLASSIFICATION-REGULATIONS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "64914e1ef46859747ab39616fee8ae1e2d472f2c14bdd726860c62f91b3d3b02",
+      "sha256": "64914e1ef46859747ab39616fee8ae1e2d472f2c14bdd726860c62f91b3d3b02",
+      "size": 4449,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "c91e228fd0e3c7e1b7fa45a9d49f28678ea4e7a0636be28f783210576c78dad1",
+      "sha256": "c91e228fd0e3c7e1b7fa45a9d49f28678ea4e7a0636be28f783210576c78dad1",
+      "size": 2037,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "f264ce505ec1e31c3f435b6f63164f6b2783dd3f97e254673e6086c97685aa86",
+      "sha256": "f264ce505ec1e31c3f435b6f63164f6b2783dd3f97e254673e6086c97685aa86",
+      "size": 20854,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/BETA-PHASE-PROTOCOL.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/BETA-PHASE-PROTOCOL.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "507b1b1ad30d51b66de60da5e7924f4067b71fc75a206a14ac28a3b07ab8e0ea",
+      "sha256": "507b1b1ad30d51b66de60da5e7924f4067b71fc75a206a14ac28a3b07ab8e0ea",
+      "size": 14577,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/CHECKPOINT-PROTOCOL.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/CHECKPOINT-PROTOCOL.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "714a8710af5897dcdbfa25d469a96a7e901f3c9c03fb8fa1debf1937d402ee1a",
+      "sha256": "714a8710af5897dcdbfa25d469a96a7e901f3c9c03fb8fa1debf1937d402ee1a",
+      "size": 7163,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/DOCUMENTATION-PROTOCOL.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/DOCUMENTATION-PROTOCOL.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "8698ed0b9169dbe22bae5d4924ad93d99b6a76c97c2e4705a13d295798aa33f2",
+      "sha256": "8698ed0b9169dbe22bae5d4924ad93d99b6a76c97c2e4705a13d295798aa33f2",
+      "size": 11776,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/LIFECYCLE-PHASES-PROTOCOL.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/LIFECYCLE-PHASES-PROTOCOL.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "68f2ad9e6994aa63e7de580da499940ec0a726da6e69494ba8310c64d11e4cc3",
+      "sha256": "68f2ad9e6994aa63e7de580da499940ec0a726da6e69494ba8310c64d11e4cc3",
+      "size": 12547,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "585cf513bf8efdfd213664844eedde380d9412ce7618cfe402aa638da4be1657",
+      "sha256": "585cf513bf8efdfd213664844eedde380d9412ce7618cfe402aa638da4be1657",
+      "size": 9854,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md",
+      "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "125708f7c9851f030fc3ac8064e7ecca06b7bf025e8094f882826d1e0d00123b",
+      "sha256": "125708f7c9851f030fc3ac8064e7ecca06b7bf025e8094f882826d1e0d00123b",
+      "size": 8908,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "199285a4748ee8f294f6f2f1c236e99200911529f7244b3dbb5b658cf5468f4f",
+      "sha256": "199285a4748ee8f294f6f2f1c236e99200911529f7244b3dbb5b658cf5468f4f",
+      "size": 2706,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/CI-CD-PIPELINE-DOCTRINE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/CI-CD-PIPELINE-DOCTRINE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "1ee817d72c1f3926f8b8e1de02b394ad8b29cbe322e25b2762601ebd767f5b31",
+      "sha256": "1ee817d72c1f3926f8b8e1de02b394ad8b29cbe322e25b2762601ebd767f5b31",
+      "size": 8715,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "773c072fbd457b7c33b9a4ddf4ffe18daecc00b97c87459c5bcfc6f10aff12d8",
+      "sha256": "773c072fbd457b7c33b9a4ddf4ffe18daecc00b97c87459c5bcfc6f10aff12d8",
+      "size": 7149,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/GO-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/GO-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "9b35ed1ab4e9849b1fba24dfeb64252708445238f5b8d20911b41e8baeb56765",
+      "sha256": "9b35ed1ab4e9849b1fba24dfeb64252708445238f5b8d20911b41e8baeb56765",
+      "size": 7693,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/HTML-CSS-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/HTML-CSS-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "0ffcf5c0172e8e0f4406dea8e2f25f7245e69b0028d4486039b0e842d812bcb7",
+      "sha256": "0ffcf5c0172e8e0f4406dea8e2f25f7245e69b0028d4486039b0e842d812bcb7",
+      "size": 8493,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/HTML-CSS-STYLE-GUIDE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/HTML-CSS-STYLE-GUIDE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/NODE-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/NODE-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "f7843dd3aea059a321036f3febaf899e86bff257a66dd7fc7613660938d505d6",
+      "sha256": "f7843dd3aea059a321036f3febaf899e86bff257a66dd7fc7613660938d505d6",
+      "size": 8307,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/PYTHON-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/PYTHON-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "b1a861cfada5dcdace5b5894f5d2f93ec6d1823a60edb558c1b794814577d75b",
+      "sha256": "b1a861cfada5dcdace5b5894f5d2f93ec6d1823a60edb558c1b794814577d75b",
+      "size": 7959,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "e31f04b163c4c4a551e0b71460aef53d5d86501bd4a4af64cd71b80cd6a879e7",
+      "sha256": "e31f04b163c4c4a551e0b71460aef53d5d86501bd4a4af64cd71b80cd6a879e7",
+      "size": 8556,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md",
+      "sourcePath": "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "742238053f804af3b93fdd76c6a68017f19a4f5682fb34441f29cc5731db6c8b",
+      "sha256": "742238053f804af3b93fdd76c6a68017f19a4f5682fb34441f29cc5731db6c8b",
+      "size": 8442,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/KNOWLEDGE/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "31e783759b329d937759750d8ffeee26c25881aabf1376c427a1fa109e127284",
+      "sha256": "31e783759b329d937759750d8ffeee26c25881aabf1376c427a1fa109e127284",
+      "size": 2763,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPER-GUIDE.md",
+      "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPER-GUIDE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "70e100c8b5240886810bde6eab8c9b2fe92fd97b0d250bf7d54ef9dac3dd9a46",
+      "sha256": "70e100c8b5240886810bde6eab8c9b2fe92fd97b0d250bf7d54ef9dac3dd9a46",
+      "size": 7020,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPMENT-PRACTICES.md",
+      "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPMENT-PRACTICES.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "570f66e3ec45517125c573892fc127a60205fa783441209344dcca145a7b3846",
+      "sha256": "570f66e3ec45517125c573892fc127a60205fa783441209344dcca145a7b3846",
+      "size": 2342,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/KNOWLEDGE/ERROR-CATALOG.md",
+      "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/ERROR-CATALOG.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "a6c114bbb1db3ca83ba0e937782a047e19c549d08a329b1a1f4e58e5d074128c",
+      "sha256": "a6c114bbb1db3ca83ba0e937782a047e19c549d08a329b1a1f4e58e5d074128c",
+      "size": 2134,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/KNOWLEDGE/GOTCHAS.md",
+      "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/GOTCHAS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "e18f91b030c63bb43a2bebf867ec84252e26451f6c0aa21b2cb47fd30ed55a86",
+      "sha256": "e18f91b030c63bb43a2bebf867ec84252e26451f6c0aa21b2cb47fd30ed55a86",
+      "size": 2088,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/KNOWLEDGE/TOOL-NOTES.md",
+      "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/TOOL-NOTES.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "059cc7754cff37ef285945dbf7cb2f19315097fb843fb386d2f2ce05b4f1a4ed",
+      "sha256": "059cc7754cff37ef285945dbf7cb2f19315097fb843fb386d2f2ce05b4f1a4ed",
+      "size": 1891,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/MANAGEMENT/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "f693bade9e7b1713560e88b2ee72c5bcfe1fe46de0a3542be03b27c3685700a6",
+      "sha256": "f693bade9e7b1713560e88b2ee72c5bcfe1fe46de0a3542be03b27c3685700a6",
+      "size": 2858,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md",
+      "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "a2f83b31d5485c64ac9861eebd4a77c0081ae376af0faa3d72801b15635ae1f5",
+      "sha256": "a2f83b31d5485c64ac9861eebd4a77c0081ae376af0faa3d72801b15635ae1f5",
+      "size": 3739,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md",
+      "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md",
+      "sourceRevision": "d118cd135bf96faa414ed1ce70d5fb60e1571e96",
+      "sourceSha256": "58b5476825e6013856bc33de6658c14473968443a5ab10374a603234b7f050e2",
+      "sha256": "58b5476825e6013856bc33de6658c14473968443a5ab10374a603234b7f050e2",
+      "size": 3429,
+      "transformation": "Restore authored blank initial scaffold; no source project history.",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-RULES.md",
+      "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-RULES.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "5c41193e32534e5479e4715ebc1430f7962e3cc5abec6fd2353d240bfd236dc4",
+      "sha256": "5c41193e32534e5479e4715ebc1430f7962e3cc5abec6fd2353d240bfd236dc4",
+      "size": 3218,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/MANAGEMENT/ROADMAP.md",
+      "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/ROADMAP.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "a0e1bc38a8bffe616ccaf1d23cd809be703e939fd91f516c54887ccb5d6e6bfe",
+      "sha256": "a0e1bc38a8bffe616ccaf1d23cd809be703e939fd91f516c54887ccb5d6e6bfe",
+      "size": 2329,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/MANAGEMENT/VISION.md",
+      "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/VISION.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "b218eb5267a7d19299ac30c236019b7bde993f8a298099e02829edbcde14c74a",
+      "sha256": "b218eb5267a7d19299ac30c236019b7bde993f8a298099e02829edbcde14c74a",
+      "size": 2042,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/NOTES.md",
+      "sourcePath": "PROJECT-INTERNAL/NOTES.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "f40f5599bcfd945c50144c65aaf7095c1ad06b10152ed80f1afd42def582c10f",
+      "sha256": "f40f5599bcfd945c50144c65aaf7095c1ad06b10152ed80f1afd42def582c10f",
+      "size": 559,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/SCRATCH/.gitkeep",
+      "sourcePath": "PROJECT-INTERNAL/SCRATCH/.gitkeep",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/SCRATCH/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/SCRATCH/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "244288cee69595ef9be7728a2c24b43f9df83268400e12260939b14e5dde3d20",
+      "sha256": "244288cee69595ef9be7728a2c24b43f9df83268400e12260939b14e5dde3d20",
+      "size": 1235,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/SCRATCH/TASK-TEMPLATE.md",
+      "sourcePath": "PROJECT-INTERNAL/SCRATCH/TASK-TEMPLATE.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "64ca4edbcd69b5587e8ed3dabb3a9a648d68fabe38984f14e339e13e2c934080",
+      "sha256": "64ca4edbcd69b5587e8ed3dabb3a9a648d68fabe38984f14e339e13e2c934080",
+      "size": 739,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/WORK-ORDERS/AGENTS.md",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "4efbdb2094bb580fca1789380918e0de7b9af6ae77a22bff44c2dc8f12db9ebc",
+      "sha256": "4efbdb2094bb580fca1789380918e0de7b9af6ae77a22bff44c2dc8f12db9ebc",
+      "size": 2855,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/corrective-work-order-template.md",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/corrective-work-order-template.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "fa7c42ef251da7669cd0efdcc62bf29220ebd6d9cd6f48287be4e4dc25141f45",
+      "sha256": "fa7c42ef251da7669cd0efdcc62bf29220ebd6d9cd6f48287be4e4dc25141f45",
+      "size": 2663,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/WORK-ORDERS/registry.json",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/registry.json",
+      "sourceRevision": "d118cd135bf96faa414ed1ce70d5fb60e1571e96",
+      "sourceSha256": "804174387aac441e81dfdf306ce2dde9a11fe29d5cc1f9017ca7eebada6447ec",
+      "sha256": "804174387aac441e81dfdf306ce2dde9a11fe29d5cc1f9017ca7eebada6447ec",
+      "size": 395,
+      "transformation": "Restore authored blank initial scaffold; no source project history.",
+      "role": "required"
+    },
+    {
+      "path": "PROJECT-INTERNAL/WORK-ORDERS/work-order-template.md",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/work-order-template.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "43112190393fe4bfb34592004d6cccbf1c18f79d278570fe8b2c769585bf9812",
+      "sha256": "43112190393fe4bfb34592004d6cccbf1c18f79d278570fe8b2c769585bf9812",
+      "size": 10570,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "README.md",
+      "sourcePath": "README.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
+      "sha256": "473fdedbda2edded0ef68e491c3e33b71f36e11d72324bdbc7cedb284f5d36c2",
+      "size": 1250,
+      "transformation": "none; owner-authorized Apache-2.0 packaging/Python pin/documentation revision; original source hash retained",
+      "role": "required"
+    },
+    {
+      "path": "README.source.md",
+      "sourcePath": "README.source.md",
+      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+      "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
+      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "role": "required",
+      "sha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
+      "size": 8504
+    },
+    {
+      "path": "SECURITY.md",
+      "sourcePath": "SECURITY.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "379360f59ae5ff03349f7e7008bddb07e9befc769e6290599b8d1427a3e77148",
+      "sha256": "379360f59ae5ff03349f7e7008bddb07e9befc769e6290599b8d1427a3e77148",
+      "size": 2373,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "VERSION",
+      "sourcePath": "VERSION",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "size": 6,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "docs/.templates/api-endpoint.md",
+      "sourcePath": "docs/.templates/api-endpoint.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "528cdeb83a0af1a6ebd7b9652b910c7a825d397059534c5338ee9efe4806fc49",
+      "sha256": "528cdeb83a0af1a6ebd7b9652b910c7a825d397059534c5338ee9efe4806fc49",
+      "size": 3978,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/.templates/architecture-overview.md",
+      "sourcePath": "docs/.templates/architecture-overview.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "192c30a89608b01879fc7e4d3ba6ba0ac97d58f346cc4a451666bc1edcf91f67",
+      "sha256": "192c30a89608b01879fc7e4d3ba6ba0ac97d58f346cc4a451666bc1edcf91f67",
+      "size": 7480,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/.templates/readme-folder.md",
+      "sourcePath": "docs/.templates/readme-folder.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "ea26b37415488a274197a970604dcde95255b9625e48ce796fb37916eded478d",
+      "sha256": "ea26b37415488a274197a970604dcde95255b9625e48ce796fb37916eded478d",
+      "size": 812,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/.templates/readme-monorepo.md",
+      "sourcePath": "docs/.templates/readme-monorepo.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "41e05df7b1f1567ffbeeccb488659176eef1cd47b6b8aa44cc2f576d78b54409",
+      "sha256": "41e05df7b1f1567ffbeeccb488659176eef1cd47b6b8aa44cc2f576d78b54409",
+      "size": 5272,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/.templates/readme.md",
+      "sourcePath": "docs/.templates/readme.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "d0a4151087f712af5c02afe6b3dee4b3ad00fe6110a477e387c6f55efae6272c",
+      "sha256": "d0a4151087f712af5c02afe6b3dee4b3ad00fe6110a477e387c6f55efae6272c",
+      "size": 3923,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/.templates/tutorial.md",
+      "sourcePath": "docs/.templates/tutorial.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "305fe39c3f41b4568f0c7d9c68374840396aa5e3968a67db6304cff6c26449ea",
+      "sha256": "305fe39c3f41b4568f0c7d9c68374840396aa5e3968a67db6304cff6c26449ea",
+      "size": 1875,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/.templates/user-guide-page.md",
+      "sourcePath": "docs/.templates/user-guide-page.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "3616d4d104bd30d9aabf7fd227c134b09ee42b18fa240e1defd8084a1a9b2575",
+      "sha256": "3616d4d104bd30d9aabf7fd227c134b09ee42b18fa240e1defd8084a1a9b2575",
+      "size": 1555,
+      "transformation": "none",
+      "role": "optional"
+    },
+    {
+      "path": "docs/AGENTS.md",
+      "sourcePath": "docs/AGENTS.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "4b71e18342cbc05c25298c0dbbb70317220c116f4cc2f7de828011eb83fe983f",
+      "sha256": "4b71e18342cbc05c25298c0dbbb70317220c116f4cc2f7de828011eb83fe983f",
+      "size": 3749,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "docs/assets/ai-workflow.svg",
+      "sourcePath": "docs/assets/ai-workflow.svg",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "7d0cba710b14c59e83716c797df331d7adac0774f456e1240075a4c0aa5f07f9",
+      "sha256": "7d0cba710b14c59e83716c797df331d7adac0774f456e1240075a4c0aa5f07f9",
+      "size": 49473,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "docs/diagrams/ai-workflow.mmd",
+      "sourcePath": "docs/diagrams/ai-workflow.mmd",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "06fbdebbc4c62b9ff2f20c875c593378d65d57de259f7c4411a883ac636f0c86",
+      "sha256": "06fbdebbc4c62b9ff2f20c875c593378d65d57de259f7c4411a883ac636f0c86",
+      "size": 2131,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "docs/diagrams/mermaid-config.json",
+      "sourcePath": "docs/diagrams/mermaid-config.json",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "a457dd9620ae3c17d75ce9f64ac6e07691b3526bda3efc85811bceaecb043ddb",
+      "sha256": "a457dd9620ae3c17d75ce9f64ac6e07691b3526bda3efc85811bceaecb043ddb",
+      "size": 49,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "docs/index.md",
+      "sourcePath": "docs/index.md",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "caa4cf46a913c76f3596efab47d886d5200ef4486626706b6092ec1b9abd10bc",
+      "sha256": "caa4cf46a913c76f3596efab47d886d5200ef4486626706b6092ec1b9abd10bc",
+      "size": 818,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "licenses/legacy-MIT.txt",
+      "sourcePath": "licenses/legacy-MIT.txt",
+      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+      "sourceSha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82",
+      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "role": "required",
+      "sha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82",
+      "size": 1070
+    },
+    {
+      "path": "project-meta.yaml",
+      "sourcePath": "project-meta.yaml",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "e39705526ca12d5ecf8cb70654840cfed739a69bd5d062dae3bdaf81535eb467",
+      "sha256": "e39705526ca12d5ecf8cb70654840cfed739a69bd5d062dae3bdaf81535eb467",
+      "size": 1820,
+      "transformation": "none",
+      "role": "required"
+    },
+    {
+      "path": "tools/sync-version.sh",
+      "sourcePath": "tools/sync-version.sh",
+      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "ce1e5f1591993e905ebf2ec0d02b2eac117d9045502f303e023b19b549f4551a",
+      "sha256": "ce1e5f1591993e905ebf2ec0d02b2eac117d9045502f303e023b19b549f4551a",
+      "size": 1570,
+      "transformation": "none",
+      "role": "optional"
+    }
+  ],
+  "excluded": [
+    {
+      "family": "mdaai-1",
+      "sourcePath": ".dctxignore",
+      "reason": "Editor or application scaffold, outside governance export."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": ".dircontxtignore",
+      "reason": "Editor or application scaffold, outside governance export."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": "CHANGELOG.md",
+      "reason": "Source project execution history; not reusable governance."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/WO-2026-001-codex-workflow-standardization.md",
+      "reason": "Source project execution history; not reusable governance."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/WO-2026-002-universal-org-scaffolding.md",
+      "reason": "Source project execution history; not reusable governance."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/WO-2026-003-roadmap-synchronization-rule.md",
+      "reason": "Source project execution history; not reusable governance."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": "eriscode.config.json",
+      "reason": "Editor or application scaffold, outside governance export."
+    },
+    {
+      "family": "mdaai-1",
+      "sourcePath": "packages/.gitkeep",
+      "reason": "Editor or application scaffold, outside governance export."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "scripts/validate.py",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "tests/test_validate.py",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "docs/ADOPTION.md",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "PROJECT-INTERNAL/ANALYSIS/",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "PROJECT-INTERNAL/RECORDS/",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "formal/",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "research/",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    },
+    {
+      "family": "mdaai-2",
+      "sourcePath": "src/",
+      "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
+    }
+  ]
+}
