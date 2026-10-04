@@ -10,4 +10,4 @@ Development and CI pin: Python **3.13.14**, read from `.python-version`. Catalog
 
 Validate: `python scripts/validate_template.py`; `python -m unittest discover -s tests -v`.
 
-Propose changes here first. Catalog registration is a separately reviewed PR to https://github.com/Eris-Margeta/mdaai-templates with immutable commit and hashes. Website: https://mdaai.org/templates/ . Original per-file provenance and adaptations: `export-manifest.json`.
+Propose changes here first. Catalog registration is a separately reviewed PR to https://github.com/Eris-Margeta/mdaai-templates with immutable commit and hashes. Website: https://www.mdaai.internet.technology/templates/ . Original per-file provenance and adaptations: `export-manifest.json`.
