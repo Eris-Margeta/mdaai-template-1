@@ -48,7 +48,6 @@ mkdir -p "$PROJECT_ROOT/$BACKUP_DIR"
 
 # Files that always sync
 ALWAYS_FILES=(
-  "CLAUDE.md"
   "AGENTS.md"
   "SECURITY.md"
   "CONTRIBUTING.md"

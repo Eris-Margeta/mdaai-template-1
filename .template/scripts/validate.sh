@@ -58,7 +58,6 @@ check_dir() {
 # Check root files
 echo "Root Files:"
 echo "-----------"
-check_file "CLAUDE.md" "required"
 check_file "AGENTS.md" "required"
 check_file "project-meta.yaml" "required"
 check_file "VERSION" "required"

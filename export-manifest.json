@@ -79,9 +79,9 @@
       "sourcePath": ".template/scripts/sync-downstream.sh",
       "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
       "sourceSha256": "77c36f4145c3a72bc0c3083d562de931c0613109c183e8db0ccc74b9f811272f",
-      "sha256": "77c36f4145c3a72bc0c3083d562de931c0613109c183e8db0ccc74b9f811272f",
-      "size": 6293,
-      "transformation": "none",
+      "sha256": "bbe781b5541be9ed6effa70087b580c9c21deeede511271bf7d8659382a6fb58",
+      "size": 6279,
+      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
       "role": "optional"
     },
     {
@@ -99,9 +99,9 @@
       "sourcePath": ".template/scripts/validate.sh",
       "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
       "sourceSha256": "26c691a363f5b64fdb877789b12e78b7788dad22a678d093aef1d4beddddf45a",
-      "sha256": "26c691a363f5b64fdb877789b12e78b7788dad22a678d093aef1d4beddddf45a",
-      "size": 8084,
-      "transformation": "none",
+      "sha256": "7236ca6e71f519be3991376583f59b12ce812a096d441c90d245a18e793823ba",
+      "size": 8050,
+      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
       "role": "optional"
     },
     {
@@ -109,9 +109,9 @@
       "sourcePath": ".template/sync-manifest.yaml",
       "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
       "sourceSha256": "afb06ee6f171b01ebdeb057c8368743d6e903b559002e6594828db7aa93f8db5",
-      "sha256": "afb06ee6f171b01ebdeb057c8368743d6e903b559002e6594828db7aa93f8db5",
-      "size": 5504,
-      "transformation": "none",
+      "sha256": "eaf7aac67b32e5be28e01772ce84467474d89f2368ae573896c4430d3c895645",
+      "size": 5488,
+      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
       "role": "required"
     },
     {
@@ -119,19 +119,9 @@
       "sourcePath": "AGENTS.md",
       "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
       "sourceSha256": "d9087e12d0f79ea8e87c2c147a1d0a5907579c1854e71ffc49f3533096801982",
-      "sha256": "d9087e12d0f79ea8e87c2c147a1d0a5907579c1854e71ffc49f3533096801982",
-      "size": 8114,
-      "transformation": "none",
-      "role": "required"
-    },
-    {
-      "path": "CLAUDE.md",
-      "sourcePath": "CLAUDE.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "eba8f227df0b82c478ac75f0c22054d8ec9658108d6d907b025d64153eb4d8aa",
-      "sha256": "eba8f227df0b82c478ac75f0c22054d8ec9658108d6d907b025d64153eb4d8aa",
-      "size": 389,
-      "transformation": "none",
+      "sha256": "26d90696832acef61d428f68931f483d5efe1f4ac8095c8329aa4afea388251a",
+      "size": 8068,
+      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
       "role": "required"
     },
     {
@@ -699,9 +689,9 @@
       "sourcePath": "README.md",
       "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
       "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
-      "sha256": "bb87138b8a3fc0a98b8e3333eae642e68925bcc6f5c7f77883746d55ee66d432",
-      "size": 1270,
-      "transformation": "owner-authored canonical packaging README; corrected public website backlink; original source revision and hash retained",
+      "sha256": "b608797f7cd530ca6b138abd974fee10e88d4d9afbc972f26d272e87339bf1b7",
+      "size": 1705,
+      "transformation": "owner-authored canonical packaging README; corrected public website backlink; original source revision and hash retained; owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; theme-aware original MDAAI logo; historical source fields retained",
       "role": "required"
     },
     {
@@ -709,10 +699,10 @@
       "sourcePath": "README.source.md",
       "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
       "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
-      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "transformation": "owner-authored packaging addition; not original upstream bytes; owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
       "role": "required",
-      "sha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
-      "size": 8504
+      "sha256": "439eba8a31732b688df335cceabbb18f4e8b6f7331bfb3f47d2e35a1e3252f9d",
+      "size": 8427
     },
     {
       "path": "SECURITY.md",
@@ -733,6 +723,28 @@
       "size": 6,
       "transformation": "none",
       "role": "required"
+    },
+    {
+      "path": "assets/brand/logo-black.svg",
+      "sourcePath": "brand-staging/logo-black.svg",
+      "sourceRevision": null,
+      "sourceOrigin": "owner-authorized original MDAAI artwork, reviewed 2026-10-04; staged source has no Git revision",
+      "sourceSha256": "cef322e1bfb791257622a4dfddbdbdd5036e1f2ba6ad50c757b6707f193d9901",
+      "sha256": "cef322e1bfb791257622a4dfddbdbdd5036e1f2ba6ad50c757b6707f193d9901",
+      "size": 983,
+      "transformation": "original SVG copied byte-for-byte; relocated to assets/brand; Apache-2.0 under repository owner attribution",
+      "role": "optional"
+    },
+    {
+      "path": "assets/brand/logo-white.svg",
+      "sourcePath": "brand-staging/logo-white.svg",
+      "sourceRevision": null,
+      "sourceOrigin": "owner-authorized original MDAAI artwork, reviewed 2026-10-04; staged source has no Git revision",
+      "sourceSha256": "11af95fd5bfcfae955139d6b44aff606798bcf99dc0e2147bc2c1d852c700b8d",
+      "sha256": "11af95fd5bfcfae955139d6b44aff606798bcf99dc0e2147bc2c1d852c700b8d",
+      "size": 983,
+      "transformation": "original SVG copied byte-for-byte; relocated to assets/brand; Apache-2.0 under repository owner attribution",
+      "role": "optional"
     },
     {
       "path": "docs/.templates/api-endpoint.md",

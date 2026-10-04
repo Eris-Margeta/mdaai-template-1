@@ -79,7 +79,6 @@ Every change is tracked:
 ```
 .
 ├── AGENTS.md                     # Canonical AI entry point and navigation map
-├── CLAUDE.md                     # Compatibility pointer to AGENTS.md
 ├── VERSION                       # Single source of version truth
 ├── project-meta.yaml             # Project identity (never syncs)
 ├── SECURITY.md                   # Security reporting policy
