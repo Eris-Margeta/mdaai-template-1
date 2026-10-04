@@ -869,9 +869,9 @@
       "sourcePath": "project-meta.yaml",
       "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
       "sourceSha256": "e39705526ca12d5ecf8cb70654840cfed739a69bd5d062dae3bdaf81535eb467",
-      "sha256": "e39705526ca12d5ecf8cb70654840cfed739a69bd5d062dae3bdaf81535eb467",
-      "size": 1820,
-      "transformation": "none",
+      "sha256": "f34bf31eec1d37b421706bce27a6dc2ec753a4ee78ab6e6f7c7bb9d6462871f2",
+      "size": 1827,
+      "transformation": "none; owner-authorized active default license metadata Apache-2.0",
       "role": "required"
     },
     {

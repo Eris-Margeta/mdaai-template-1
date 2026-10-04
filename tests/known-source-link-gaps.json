@@ -1,0 +1,217 @@
+[
+  {
+    "path": "docs/.templates/api-endpoint.md",
+    "line": 213,
+    "target": "get-endpoint.md"
+  },
+  {
+    "path": "docs/.templates/api-endpoint.md",
+    "line": 214,
+    "target": "delete-endpoint.md"
+  },
+  {
+    "path": "docs/.templates/api-endpoint.md",
+    "line": 215,
+    "target": "list-endpoints.md"
+  },
+  {
+    "path": "docs/.templates/architecture-overview.md",
+    "line": 133,
+    "target": "../PROJECT-INTERNAL/ARCHITECTURE/ADR-001.md"
+  },
+  {
+    "path": "docs/.templates/architecture-overview.md",
+    "line": 134,
+    "target": "../PROJECT-INTERNAL/ARCHITECTURE/ADR-002.md"
+  },
+  {
+    "path": "docs/.templates/architecture-overview.md",
+    "line": 208,
+    "target": "../api/index.md"
+  },
+  {
+    "path": "docs/.templates/architecture-overview.md",
+    "line": 209,
+    "target": "../guide/index.md"
+  },
+  {
+    "path": "docs/.templates/architecture-overview.md",
+    "line": 210,
+    "target": "../PROJECT-INTERNAL/ARCHITECTURE/"
+  },
+  {
+    "path": "docs/.templates/readme-folder.md",
+    "line": 50,
+    "target": "../related1/"
+  },
+  {
+    "path": "docs/.templates/readme-folder.md",
+    "line": 51,
+    "target": "../../docs/related.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 27,
+    "target": "./packages/core"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 28,
+    "target": "./packages/cli"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 29,
+    "target": "./packages/server"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 103,
+    "target": "./docs/api/core.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 103,
+    "target": "./packages/core/README.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 104,
+    "target": "./docs/cli.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 104,
+    "target": "./packages/cli/README.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 105,
+    "target": "./docs/api/server.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 105,
+    "target": "./packages/server/README.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 109,
+    "target": "./docs/architecture/index.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 110,
+    "target": "./CONTRIBUTING.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 111,
+    "target": "./docs/guide/development.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 191,
+    "target": "./CONTRIBUTING.md"
+  },
+  {
+    "path": "docs/.templates/readme-monorepo.md",
+    "line": 202,
+    "target": "./LICENSE"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 87,
+    "target": "./docs/guide/index.md"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 88,
+    "target": "./docs/api/index.md"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 89,
+    "target": "./docs/architecture/index.md"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 90,
+    "target": "./examples/"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 120,
+    "target": "./docs/guide/configuration.md"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 160,
+    "target": "./CONTRIBUTING.md"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 179,
+    "target": "./CHANGELOG.md"
+  },
+  {
+    "path": "docs/.templates/readme.md",
+    "line": 185,
+    "target": "./LICENSE"
+  },
+  {
+    "path": "docs/.templates/tutorial.md",
+    "line": 130,
+    "target": "link"
+  },
+  {
+    "path": "docs/.templates/tutorial.md",
+    "line": 131,
+    "target": "link"
+  },
+  {
+    "path": "docs/.templates/tutorial.md",
+    "line": 132,
+    "target": "link"
+  },
+  {
+    "path": "docs/.templates/user-guide-page.md",
+    "line": 116,
+    "target": "link"
+  },
+  {
+    "path": "docs/.templates/user-guide-page.md",
+    "line": 117,
+    "target": "link"
+  },
+  {
+    "path": "docs/.templates/user-guide-page.md",
+    "line": 118,
+    "target": "link"
+  },
+  {
+    "path": "docs/index.md",
+    "line": 11,
+    "target": "guide/getting-started.md"
+  },
+  {
+    "path": "docs/index.md",
+    "line": 12,
+    "target": "guide/index.md"
+  },
+  {
+    "path": "docs/index.md",
+    "line": 13,
+    "target": "api/index.md"
+  },
+  {
+    "path": "docs/index.md",
+    "line": 14,
+    "target": "tutorials/index.md"
+  },
+  {
+    "path": "docs/index.md",
+    "line": 34,
+    "target": "guide/troubleshooting.md"
+  }
+]

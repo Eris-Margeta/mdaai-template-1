@@ -67,7 +67,7 @@ governance:
 # 9. LINKS
 repo: "https://github.com/Eris-Margeta/your-project"
 homepage: ""
-license: "MIT"
+license: "Apache-2.0"
 
 tags:
   - "template"
