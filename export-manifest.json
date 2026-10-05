@@ -1094,9 +1094,9 @@
       "sourcePath": "README.md",
       "sourceRevision": null,
       "sourceSha256": "f239b46de7029f7946268a2fbc3581a07291e6c4cec8b86077e091dca9ed2591",
-      "sha256": "5038e8e4a791393f6e873314d8f3880b15a6ec7c4fa94a326951e4cff204c773",
-      "size": 2365,
-      "transformation": "Public package wrapper with independent release identity, logo and reviewed index/site links; current canonical README source retained in README.source.md; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.",
+      "sha256": "222b911823d48cd0b612d8ac7cc4322aa634fecc51779340fa497e836dd0ad91",
+      "size": 7026,
+      "transformation": "Public package wrapper with independent release identity, logo and reviewed index/site links; current canonical README source retained in README.source.md; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.; owner-authorized HOW TO USE adoption documentation; historical source provenance retained",
       "role": "required",
       "historicalSource": {
         "sourcePath": "README.md",
