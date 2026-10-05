@@ -1,10 +1,14 @@
 # agent-rules.yaml
 # Machine-parseable version of AI-INSTRUCTIONS.md
-# This file enables automated validation and enforcement
+# Declarative contract only: automated enforcement/locking needs an adapter, not supplied here.
 
-version: "1.0.0"
+version: "1.1.0"
 protocol: "TEJL/MDAAI"
-protocol_version: "2.0"
+template_name: "MDAAI 1.0"
+template_release_version: "1.0.1"
+constitution_revision: "1.8"
+identity_file: "TEMPLATE-IDENTITY.json"
+# Standalone protocol version is independent; no automatic inheritance.
 
 # =============================================================================
 # ENTRY POINT
@@ -86,16 +90,17 @@ required_reads:
 # =============================================================================
 
 document_permissions:
-  # AI CANNOT modify these
+  # Preserved records and documents not covered by approved revision
   immutable:
-    - "PROJECT-INTERNAL/GOVERNANCE/**"
-    - "PROJECT-INTERNAL/AI/**"                  # Function schemas
     - "PROJECT-INTERNAL/ARCHITECTURE/ADR-*.md"  # After approval
-    - "PROJECT-INTERNAL/WORK-ORDERS/WO-*.md"    # After creation
-    - "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/CWO-*.md"
     - "PROJECT-INTERNAL/CHECKPOINTS/CP-*.md"    # After creation
     - "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md"
     - "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md"
+
+  read_only_unless_approved_revision:
+    - "PROJECT-INTERNAL/GOVERNANCE/**"
+    - "PROJECT-INTERNAL/AI/**"
+  revision_preconditions: ["explicit_operator_approved_scope", "saved_registered_open_work_order"]
 
   # AI CAN modify these
   ai_mutable:
@@ -116,9 +121,12 @@ document_permissions:
 
     - path: "PROJECT-INTERNAL/WORK-ORDERS/registry.json"
       allowed_actions:
-        - "add_entry"               # Add new work orders
+        - "add_entry"               # Register before implementation
+        - "update_active_entry"
+        - "close_with_real_evidence"
+        - "link_correction_preserve_terminal_result"
         - "reserve_sequence"        # Reserve sequence numbers
-        # Note: Cannot modify existing entries
+        # Active entries editable; terminal outcome preserved.
 
 # =============================================================================
 # LIFECYCLE PHASES
@@ -275,13 +283,13 @@ date_format:
 work_order_triggers:
   # Events that MUST create a Work Order
   mandatory:
-    - event: "task_complete"
+    - event: "before_implementation"
       type: "WO"
-      description: "Task from PROJECT-ELABORATION.md completed"
+      description: "Approved task or direct bounded operator request before implementation"
 
-    - event: "error_resolved"
+    - event: "before_corrective_implementation"
       type: "CWO"
-      description: "Error encountered and resolved"
+      description: "Error identified; corrective scope opened before fixing"
 
     - event: "file_created"
       type: "WO"
@@ -403,11 +411,11 @@ validation:
 # =============================================================================
 
 prohibited:
-  - action: "work_not_in_backlog"
-    description: "Working on tasks not in PROJECT-ELABORATION.md"
+  - action: "work_without_authority"
+    description: "Working without approved planning scope or direct explicit operator request"
 
   - action: "modify_governance"
-    description: "Modifying GOVERNANCE/ documents"
+    description: "Unilateral GOVERNANCE edits without operator-approved revision scope and Work Order"
 
   - action: "ignore_error"
     description: "Proceeding past error without CWO"
@@ -419,7 +427,7 @@ prohibited:
     description: "Completing a Work Order without reviewing PROJECT-ELABORATION.md or recording no roadmap impact"
 
   - action: "modify_immutable"
-    description: "Modifying immutable documents after creation"
+    description: "Rewriting terminal result or approved historical record"
 
   - action: "improvise_solutions"
     description: "Creating solutions for undocumented situations"
@@ -462,3 +470,14 @@ environment:
     never_log: true
     never_commit: true
     production_access: "requires_explicit_instruction"
+
+work_order_lifecycle:
+  editable_active: ["PENDING", "IN PROGRESS", "BLOCKED"]
+  preserved_terminal: ["COMPLETE", "VOID"]
+  registration: "register_before_implementation"
+  authority_sources: ["project-elaboration", "direct-operator-request"]
+  active_updates: "synchronize_document_and_registry"
+  closure: "real_evidence_all_acceptance_criteria"
+  terminal_correction: "linked_new_record_and_current_status_without_result_rewrite"
+  enforcement: "declarative_only_no_adapter_or_locks"
+  approved_revision: "explicit_operator_scope_and_work_order"

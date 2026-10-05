@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Registry Management Functions",
-  "description": "Function schemas for managing the Work Order registry",
-  "version": "1.0.0",
+  "description": "Declarative registry contracts, aligned with real workOrders fields. No adapter or atomic locking is implemented. One-writer direct file edits are the fallback; do not claim reservations prevent races without a backend.",
+  "version": "1.1.0",
   "functions": [
     {
       "name": "reserveSequenceNumber",
-      "description": "Reserves the next available sequence number for a Work Order. MUST be called before creating a WO to prevent conflicts in multi-agent scenarios.",
+      "description": "Reserve a unique sequence before creation through an actual atomic backend if supplied. Otherwise use one writer and directly inspect/update registry; the schema alone does not lock.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -16,7 +16,11 @@
           },
           "orderType": {
             "type": "string",
-            "enum": ["WO", "CWO", "DWO"],
+            "enum": [
+              "WO",
+              "CWO",
+              "DWO"
+            ],
             "description": "Type of work order being reserved"
           },
           "reservationDuration": {
@@ -25,7 +29,10 @@
             "description": "How long to hold the reservation in seconds (default: 1 hour)"
           }
         },
-        "required": ["agentId", "orderType"]
+        "required": [
+          "agentId",
+          "orderType"
+        ]
       },
       "returns": {
         "type": "object",
@@ -48,7 +55,7 @@
     },
     {
       "name": "registerWorkOrder",
-      "description": "Registers a completed Work Order in the registry. Called after the WO document is created.",
+      "description": "Register a saved active order before implementation. Use exact existing registry fields; synchronize active updates and closure.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -66,7 +73,11 @@
             "properties": {
               "type": {
                 "type": "string",
-                "enum": ["WO", "CWO", "DWO"]
+                "enum": [
+                  "standard",
+                  "corrective",
+                  "diagnostic"
+                ]
               },
               "subject": {
                 "type": "string"
@@ -80,29 +91,45 @@
               },
               "status": {
                 "type": "string",
-                "enum": ["COMPLETE", "PENDING", "VOID"]
+                "enum": [
+                  "PENDING",
+                  "IN PROGRESS"
+                ]
               },
               "filePath": {
                 "type": "string",
-                "description": "Path to the WO document"
-              },
-              "taskReference": {
-                "type": "string",
-                "description": "Reference to PROJECT-ELABORATION.md task"
-              },
-              "timeSpent": {
-                "type": "string",
-                "description": "Actual time spent"
+                "description": "Relative existing document path; type and directory must match WO/CWO/DWO. Check existence and ID in the adapter/direct fallback.",
+                "pattern": "^PROJECT-INTERNAL/WORK-ORDERS/(?:WO-[0-9]{4}-[0-9]{3}-[a-z0-9-]+|CORRECTIVE/CWO-[0-9]{4}-[0-9]{3}-[a-z0-9-]+|DIAGNOSTIC/DWO-[0-9]{4}-[0-9]{3}-[a-z0-9-]+)\\.md$"
               },
               "filesChanged": {
                 "type": "integer",
                 "description": "Number of files changed"
+              },
+              "taskRef": {
+                "type": "string",
+                "description": "Exact planning reference or dated direct operator request"
+              },
+              "timeActual": {
+                "type": "string",
+                "description": "Actual time spent"
               }
             },
-            "required": ["type", "subject", "executor", "date", "status", "filePath"]
+            "required": [
+              "type",
+              "subject",
+              "executor",
+              "date",
+              "status",
+              "filePath",
+              "taskRef"
+            ],
+            "additionalProperties": false
           }
         },
-        "required": ["workOrderId", "metadata"]
+        "required": [
+          "workOrderId",
+          "metadata"
+        ]
       }
     },
     {
@@ -134,7 +161,9 @@
             "description": "Why the reservation is being released"
           }
         },
-        "required": ["reservationId"]
+        "required": [
+          "reservationId"
+        ]
       }
     },
     {
@@ -157,11 +186,16 @@
           },
           "assignedTasks": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "Task references assigned to this agent"
           }
         },
-        "required": ["agentId", "agentType"]
+        "required": [
+          "agentId",
+          "agentType"
+        ]
       }
     },
     {
@@ -187,6 +221,401 @@
             "default": true
           }
         }
+      }
+    },
+    {
+      "name": "updateWorkOrderRegistry",
+      "description": "Synchronize an active document and index. Read actual prior state, not merely caller-supplied previousStatus; successful closure requires closeWorkOrder evidence.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "workOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
+          },
+          "previousStatus": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN PROGRESS",
+              "BLOCKED"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN PROGRESS",
+              "BLOCKED",
+              "COMPLETE",
+              "VOID"
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "filePath": {
+            "type": "string",
+            "description": "Relative existing document path; type and directory must match WO/CWO/DWO. Check existence and ID in the adapter/direct fallback.",
+            "pattern": "^PROJECT-INTERNAL/WORK-ORDERS/(?:WO-[0-9]{4}-[0-9]{3}-[a-z0-9-]+|CORRECTIVE/CWO-[0-9]{4}-[0-9]{3}-[a-z0-9-]+|DIAGNOSTIC/DWO-[0-9]{4}-[0-9]{3}-[a-z0-9-]+)\\.md$"
+          },
+          "timeActual": {
+            "type": "string"
+          },
+          "filesChanged": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "closureEvidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "workOrderId": {
+                "type": "string",
+                "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
+              },
+              "previousStatus": {
+                "type": "string",
+                "enum": [
+                  "IN PROGRESS"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "const": "COMPLETE"
+              },
+              "filesChanged": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "Created",
+                        "Modified",
+                        "Deleted",
+                        "Renamed"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "action"
+                  ]
+                }
+              },
+              "verificationResults": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "command": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "outcome": {
+                      "type": "string",
+                      "enum": [
+                        "PASS",
+                        "NOT APPLICABLE"
+                      ]
+                    },
+                    "exitCode": {
+                      "type": "integer",
+                      "const": 0
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "command",
+                    "outcome",
+                    "evidence"
+                  ],
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "outcome": {
+                            "const": "PASS"
+                          }
+                        }
+                      },
+                      "then": {
+                        "required": [
+                          "exitCode"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "acceptanceCriteria": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "criterion": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "satisfied": {
+                      "type": "boolean",
+                      "const": true
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "criterion",
+                    "satisfied",
+                    "evidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "timeActual": {
+                "type": "string",
+                "minLength": 1
+              },
+              "completedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "elaborationReview": {
+                "type": "string",
+                "minLength": 1
+              },
+              "correctiveAnalysis": {
+                "type": "object",
+                "properties": {
+                  "rootCause": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "prevention": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "rootCause",
+                  "prevention"
+                ]
+              },
+              "orderType": {
+                "type": "string",
+                "enum": [
+                  "standard",
+                  "corrective",
+                  "diagnostic"
+                ]
+              }
+            },
+            "required": [
+              "workOrderId",
+              "previousStatus",
+              "status",
+              "orderType",
+              "filesChanged",
+              "verificationResults",
+              "acceptanceCriteria",
+              "timeActual",
+              "completedAt",
+              "elaborationReview"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "orderType": {
+                      "const": "corrective"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "correctiveAnalysis"
+                  ]
+                }
+              }
+            ]
+          },
+          "voidReason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "workOrderId",
+          "previousStatus",
+          "status",
+          "updatedAt"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "COMPLETE"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "closureEvidence",
+                "completedAt",
+                "timeActual",
+                "filesChanged"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "VOID"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "voidReason",
+                "completedAt"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "previousStatus": {
+                  "const": "PENDING"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "PENDING",
+                    "IN PROGRESS",
+                    "VOID"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "COMPLETE"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "previousStatus": {
+                  "const": "IN PROGRESS"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "previousStatus": {
+                  "const": "BLOCKED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "BLOCKED",
+                    "IN PROGRESS",
+                    "VOID"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "previousStatus": {
+                  "const": "IN PROGRESS"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "IN PROGRESS",
+                    "BLOCKED",
+                    "COMPLETE",
+                    "VOID"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "linkCorrectiveOrder",
+      "description": "Append correctiveOrderIds and update currentStatus for a terminal original without changing its status, completion evidence or document. Check both stored IDs exist and the new order links the original.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "originalWorkOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
+          },
+          "correctiveWorkOrderId": {
+            "type": "string",
+            "pattern": "^CWO-[0-9]{4}-[0-9]{3}$"
+          },
+          "currentStatus": {
+            "type": "string",
+            "enum": [
+              "CORRECTION REQUIRED",
+              "CORRECTED"
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "originalWorkOrderId",
+          "correctiveWorkOrderId",
+          "currentStatus",
+          "updatedAt"
+        ]
       }
     }
   ]

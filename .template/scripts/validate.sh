@@ -27,10 +27,10 @@ check_file() {
   else
     if [ "$required" = "required" ]; then
       echo "  ✗ $file (MISSING - REQUIRED)"
-      ((ERRORS++))
+      ((ERRORS += 1))
     else
       echo "  ⚠ $file (missing - optional)"
-      ((WARNINGS++))
+      ((WARNINGS += 1))
     fi
     return 0
   fi
@@ -46,10 +46,10 @@ check_dir() {
   else
     if [ "$required" = "required" ]; then
       echo "  ✗ $dir/ (MISSING - REQUIRED)"
-      ((ERRORS++))
+      ((ERRORS += 1))
     else
       echo "  ⚠ $dir/ (missing - optional)"
-      ((WARNINGS++))
+      ((WARNINGS += 1))
     fi
     return 0
   fi
@@ -209,7 +209,7 @@ if [ -f "$PROJECT_ROOT/project-meta.yaml" ]; then
       ;;
     *)
       echo "  WARNING: Unknown language '$LANGUAGE'"
-      ((WARNINGS++))
+      ((WARNINGS += 1))
       ;;
     esac
   fi

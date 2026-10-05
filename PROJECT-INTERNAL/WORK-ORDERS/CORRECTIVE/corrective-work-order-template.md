@@ -1,104 +1,65 @@
-# Corrective Work Order [CWO-YYYY-NNN]
+# Corrective Work Order CWO-YYYY-NNN — [description]
 
-**FACTORY OF ELECTRONIC UNITS AND LOGIC – TEJL d.o.o.**
-Corrective Action Registry
+Class: [project-meta.yaml work_orders.class_prefix]
+Reference Number: [project-meta.yaml work_orders.reference_prefix + year/type/unique sequence]
+Date: [DD.MM.YYYY]
+Executor: [project-meta.yaml operator.name]
+Subject: [bounded planned work]
+Status: PENDING
+Created: [ISO date-time]
+Last Updated: [ISO date-time]
 
----
+## AUTHORIZATION
+Source: [project-elaboration OR direct-operator-request]
+Task Reference: [PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md section OR exact dated operator request]
+Authorized By: [human operator]
+Scope and exclusions: [bounded authorized changes; no unrelated external authority]
+Related ADR / dependencies: [actual links if applicable, otherwise N/A with reason]
 
-**Class:** [XXX-XX/YY-XX]
-**Reference Number:** [XXX-XX-XX-YY-XX]
-**Date:** [YYYY-MM-DD]
-**Executor:** [Operator Name or AI Model Identifier]
+## INCIDENT CLASSIFICATION
+[Severity, category, discovery method and observed error]
 
----
+## RELATED ORIGINAL WORK ORDER
+[Exact original ID/path if known; do not rewrite terminal original]
 
-## Incident Classification
+## ROOT CAUSE AND PREVENTION
+Pending investigation; actual root cause/prevention required on closure.
 
-**Type:** [Error | Protocol Violation | Unexpected Behavior | Security Issue]
-**Severity:** [Critical | High | Medium | Low]
-**Discovery Method:** [During testing | During development | User report | Automated monitoring]
+## OBJECTIVE
+[Measurable goal]
 
-## Incident Description
+## TECHNICAL SPECIFICATION
+[Exact authorized files and planned changes]
 
-[What went wrong. Be specific and factual.]
+## RATIONALE
+[Reasoning]
 
-## Context
+## VERIFICATION STEPS
+[Exact commands/checks and acceptance criteria; plans, not executed effects]
 
-**Related Work Order:** [WO-YYYY-NNN if this occurred during specific work]
-**Task Reference:** [PROJECT-ELABORATION.md reference if applicable]
-**Affected Component:** [Component/module/file]
+## EXPECTED OUTCOME
+[Measurable criteria]
 
-## Timeline
+## PROGRESS
+[Timestamped active updates; editable while PENDING, IN PROGRESS or BLOCKED]
 
-| Time | Event |
-|------|-------|
-| [HH:MM] | [Incident discovered] |
-| [HH:MM] | [Initial diagnosis began] |
-| [HH:MM] | [Root cause identified] |
-| [HH:MM] | [Fix implemented] |
-| [HH:MM] | [Verification complete] |
+## FILES CHANGED
+Pending execution; record actual paths/actions/diff counts after work.
 
-## Root Cause Analysis
+## VERIFICATION RESULTS
+Pending execution; record actual commands, exit codes, output/evidence and criterion outcomes.
 
-[Why did this happen? Be honest and thorough. Consider:
-- What was the immediate cause?
-- What was the underlying cause?
-- What conditions allowed this to happen?
-- Was there a process failure?]
+## EXPENDITURE
+Estimated: [human effort estimate, optional]
+Actual: pending execution; do not substitute estimate.
+Material: Consumables [list actual external resources if used]
 
-## Corrective Actions Taken
+## ELABORATION REVIEW
+Pending closure; update actual planning impact or record no roadmap update required.
 
-| # | Action | Status | Verified |
-|---|--------|--------|----------|
-| 1 | [Action description] | [Complete/Pending] | [Yes/No] |
-| 2 | [Action description] | [Complete/Pending] | [Yes/No] |
+## CLOSURE
+Completed: [empty until verified closure]
+Void reason: [only for abandonment]
 
-## Prevention Measures
-
-[What was done to prevent this from happening again?
-- Code changes
-- Process changes
-- Documentation updates
-- Test additions]
-
-## Files Changed
-
-| File | Action | Lines Changed |
-|------|--------|---------------|
-| [path/to/file] | [Created/Modified/Deleted] | [+N, -M] |
-
-## Knowledge Base Updates
-
-- [ ] GOTCHAS.md updated
-- [ ] ERROR-CATALOG.md updated
-- [ ] DEVELOPMENT-PRACTICES.md updated
-- [ ] DEVELOPER-GUIDE.md updated
-
-**Knowledge Update Details:**
-[What was added to which document]
-
-## Verification
-
-**Issue Resolved:** [Yes/No]
-**Tests Added:** [Yes/No - describe tests]
-**Regression Verified:** [Yes/No - describe verification]
-**Build Status:** [Pass/Fail]
-**Test Status:** [Pass/Fail]
-
-## Impact Assessment
-
-**Systems Affected:** [List affected systems/components]
-**Data Impact:** [None | Describe data impact]
-**User Impact:** [None | Describe user impact]
-**Downtime:** [None | Duration]
-
-## Lessons Learned
-
-[What did we learn from this incident? What should we do differently?]
-
----
-
-**Status:** [RESOLVED | PENDING | ESCALATED]
-**Registry Updated:** [Yes/No]
-**Date Resolved:** [YYYY-MM-DD]
-**Resolution Verified By:** [Name/AI Model]
+## Usage contract
+Reserve -> save -> register -> OPEN as IN PROGRESS before implementation. No completed tests/results are required at creation. Update active document and registry while executing. Close COMPLETE only with actual files, checks, satisfied criteria, expenditure, completed timestamp and Elaboration review. Failure blocks successful closure; record blocker and BLOCKED instead. VOID retains file and reason. Preserve COMPLETE/VOID terminal results; later defects require linked corrective/new records and current registry status updates, never rewriting closed evidence. Full state mapping, paths and schemas: `PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md`. This is an unexecuted template, not an execution example.

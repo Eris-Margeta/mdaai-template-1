@@ -61,7 +61,7 @@ Every function must do **ONE thing** at **ONE level of abstraction**.
 struct FileNode {
     is_ignored: bool,
     is_omitted: bool,
-    should_debug: bool, 
+    should_debug: bool,
     // 8 possible states. What does ignored=true + should_debug=true mean?
 }
 ```
@@ -88,7 +88,7 @@ enum FileHandlingDecision {
 ✅ **GOOD:**
 ```rust
 // CORE: Pure logic (easy to test, no mocks needed)
-fn should_ignore(path: &str, rules: &[Rule]) -> bool { 
+fn should_ignore(path: &str, rules: &[Rule]) -> bool {
     rules.iter().any(|r| r.matches(path))
 }
 
@@ -155,7 +155,7 @@ fs::read_to_string(path)? // Returns "Permission denied" - on which file?
 
 ✅ **GOOD:**
 ```rust
-fs::read_to_string(path).map_err(|e| 
+fs::read_to_string(path).map_err(|e|
     io::Error::new(e.kind(), format!("Failed to read config at {:?}: {}", path, e))
 )?
 ```

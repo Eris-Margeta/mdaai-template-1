@@ -1,8 +1,10 @@
 # TEJL Repository Template
 
+For any agent system, point its entry instructions to the nearest AGENTS.md. Applicable parent and scoped governance files are cumulative.
+
 <!-- VERSION BADGE: Derives from VERSION file -->
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-Apache--2.0-green)
 ![AI-Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen)
 ![Governance](https://img.shields.io/badge/governance-TEJL%2FMDAAI-purple)
 
@@ -67,7 +69,7 @@ Everything has ONE job:
 ### Bureaucratic Accountability
 
 Every change is tracked:
-- **Work Orders** required for all completed work
+- **Work Orders** saved, registered and opened before all implementation; active updates then verified closure
 - **Corrective Work Orders** for errors
 - **Checkpoints** for milestones
 - **No unauthorized work**
@@ -86,7 +88,7 @@ Every change is tracked:
 ├── CODE_OF_CONDUCT.md            # Community standards
 │
 ├── PROJECT-INTERNAL/             # Internal governance
-│   ├── GOVERNANCE/               # The Constitution (immutable)
+│   ├── GOVERNANCE/               # The Constitution (approved revisions only)
 │   │   ├── AI-INSTRUCTIONS.md    # Core rules for all AI agents
 │   │   ├── MULTI-AGENT-PROTOCOL.md
 │   │   └── ...
@@ -119,7 +121,7 @@ Every change is tracked:
 
 ### Document Hierarchy
 
-1. **GOVERNANCE/** - The Constitution (AI cannot modify)
+1. **GOVERNANCE/** - The Constitution (no unilateral AI revisions)
 2. **ADRs** - Architectural precedents (immutable after approval)
 3. **PROJECT-ELABORATION.md** - Authorized work (AI can mark complete)
 4. **ANALYSIS/** - Durable evidence and investigation records
@@ -258,7 +260,7 @@ Style guides are in `PROJECT-INTERNAL/GUIDES/`:
 
 ## License
 
-MIT License - see [LICENSE](./LICENSE) for details.
+Apache License 2.0 is the default for Eris Margeta Kurdali's original contributions and new repository packaging, including new owner-authored material in future repositories unless the owner explicitly selects another license. See [LICENSE](./LICENSE) and [NOTICE](./NOTICE) for scope. The previous MIT license and copyright notice are preserved verbatim in [licenses/legacy-MIT.txt](./licenses/legacy-MIT.txt); inherited MIT-covered material and third-party notices retain their applicable terms. This default does not revoke prior MIT grants or relicense third-party or otherwise unlicensed inherited material.
 
 ---
 
@@ -266,3 +268,7 @@ MIT License - see [LICENSE](./LICENSE) for details.
   <strong>FACTORY OF ELECTRONIC UNITS AND LOGIC – TEJL d.o.o.</strong><br>
   <em>Bureaucracy-First, AI-Assisted Development</em>
 </p>
+
+## Local correction candidate identity
+
+Named template **MDAAI 1.0**, release **1.0.1** (local uncommitted candidate), constitution internal revision **1.8**. Historical source had VERSION 1.0.0 and constitution revision 1.7; these were separate labels, not one unified release. See `TEMPLATE-IDENTITY.json`. The standalone MDAAI protocol has its own version/repository. `project-meta.yaml` version is a derived-project scaffold, not this template release. No remote release/adoption is claimed. Active Work Orders are editable; closed COMPLETE/VOID results are preserved with linked later correction records. Schemas are contracts, not automatic enforcement.

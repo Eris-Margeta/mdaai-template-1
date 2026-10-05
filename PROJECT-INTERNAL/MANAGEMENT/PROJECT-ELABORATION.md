@@ -8,8 +8,8 @@
 Development Planning Document
 
 **Document Type:** Project Development Elaboration
-**Version:** 1.0.0
-**Last Updated:** YYYY-MM-DD
+**Version:** 1.0.1
+**Last Updated:** 2026-06-11
 
 ---
 
@@ -46,13 +46,14 @@ Development Planning Document
 This document may be modified by AI agents ONLY for:
 
 1. **Marking tasks complete:** Change `[ ]` to `[x]`, add Work Order reference
-2. **During REVISION Phase:** When explicitly initiated by human operator
+2. **Work Order synchronization:** After every Work Order, update this document if roadmap state, phase status, priorities, backlog, or sequencing changed
+3. **During REVISION Phase:** When explicitly initiated by human operator
    - Reordering tasks
    - Creating new tasks
    - Restructuring phases
    - Updating priorities
 
-See AI-INSTRUCTIONS.md Article 10 for full details.
+See AI-INSTRUCTIONS.md Articles 5 and 8 for full details.
 
 ---
 
@@ -135,16 +136,18 @@ Ideas and future work:
 | Version | Date | Changes | Work Order |
 |---------|------|---------|------------|
 | 1.0.0 | YYYY-MM-DD | Initial creation | - |
+| 1.0.1 | 2026-06-11 | Added mandatory Project Elaboration synchronization after every Work Order | WO-2026-003 |
 
 ---
 
 ## Rules for This Document
 
-1. **Only humans may add new items to Phases**
+1. **Only approved scope may add new items to Phases**; a direct explicit operator request permits registering bounded scope before implementation without prior backlog entry or repeat approval
 2. **AI may only mark items as `[x]` complete**
 3. **AI must create Work Order before marking complete**
 4. **Moving items between phases requires human approval**
 5. **During REVISION Phase, AI may restructure with human approval**
+6. **After every Work Order, AI must review this document and update it if needed, or record no roadmap impact in the Work Order**
 
 ---
 

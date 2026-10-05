@@ -7,7 +7,7 @@
 name: "project-name"
 description: "Brief description of the project"
 status: "Planning"
-version: "1.0.0"
+version: "1.0.0" # Derived project scaffold version, not template release; see TEMPLATE-IDENTITY.json
 created_at: "DD.MM.YYYY"
 last_updated: "DD.MM.YYYY"
 
@@ -52,7 +52,7 @@ tech_stack:
 
 # 7. TEMPLATE SYNC CONFIGURATION
 template:
-  source: "https://github.com/Eris-Margeta/repo-template-core"
+  source: "https://github.com/Eris-Margeta/mdaai-template-1"
   last_sync: null
   auto_sync: false
 

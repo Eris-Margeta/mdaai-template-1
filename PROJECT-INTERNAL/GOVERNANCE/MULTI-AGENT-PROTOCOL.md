@@ -97,18 +97,19 @@ Coordinate sequence numbers via registry.json.
 2. Agent identifies next available sequence number
 3. Agent reserves number by updating registry.json with status "reserved"
 4. Agent creates Work Order with reserved number
-5. Agent updates registry.json with completed Work Order metadata
+5. Agent saves and registers Work Order metadata as PENDING or IN PROGRESS before implementation
+6. OPEN as IN PROGRESS; update active records; CLOSE COMPLETE only with verified evidence
 ```
 
 (3) **Registry Entry Format:**
 
 ```json
 {
-  "id": "WO-2026-XXX",
-  "status": "reserved|complete",
-  "agent_id": "agent-identifier",
-  "reserved_at": "ISO-8601 timestamp",
-  "completed_at": "ISO-8601 timestamp or null"
+  "id": "WO-2026-001",
+  "type": "standard",
+  "status": "IN PROGRESS",
+  "taskRef": "Dated direct operator request or approved planning task",
+  "filePath": "PROJECT-INTERNAL/WORK-ORDERS/WO-2026-001-example.md"
 }
 ```
 
@@ -116,7 +117,7 @@ Coordinate sequence numbers via registry.json.
 
 (1) Before reserving a sequence number, the agent MUST verify:
 - The number is not already reserved by another agent
-- The number is not already used by a completed Work Order
+- The number is not already used by any Work Order (active or terminal)
 
 (2) If a conflict is detected:
 - STOP work immediately
@@ -177,7 +178,7 @@ Coordinate sequence numbers via registry.json.
 ```
 
 (3) After updating:
-- Create a Work Order referencing the knowledge update
+- Update the already opened Work Order with the actual knowledge update evidence
 - Other agents should periodically re-read KNOWLEDGE/ files
 
 ---
@@ -199,18 +200,11 @@ Coordinate sequence numbers via registry.json.
 
 ### **Article 11: Registry.json Atomicity**
 
-(1) Updates to `registry.json` MUST be atomic.
+(1) Coordinate one registry writer unless an actual atomic adapter/lock is available. Function schemas alone do not provide locking.
 
-(2) The recommended procedure:
-- Read current registry.json
-- Add new entry
-- Write entire updated registry.json
-- Verify write was successful
+(2) Direct-file fallback: serialize writers, read current file, save/register active entries before work, synchronize updates/closure, and read back the exact target. A plain read-modify-write is not race-proof. Preserve terminal results; linked corrections change currentStatus only. Reservation status "reserved" belongs to sequenceReservations, not workOrders lifecycle status.
 
-(3) In case of write conflict:
-- Re-read registry.json
-- Merge changes
-- Retry write
+(3) On conflict stop, reread and coordinate before retrying; never overwrite another writer's data.
 
 ---
 

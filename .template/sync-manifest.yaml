@@ -9,6 +9,7 @@ version: "1.0.0"
 
 # Files that ALWAYS sync from template to projects
 always_sync:
+  - ".gitattributes"
   - "AGENTS.md"
   - "SECURITY.md"
   - "CONTRIBUTING.md"
@@ -70,6 +71,7 @@ never_sync:
   - "project-meta.yaml"
   - "README.md"
   - "VERSION"
+  - "TEMPLATE-IDENTITY.json" # Template package identity must not replace a derived project version
   - "LICENSE"
   - "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md"
   - "PROJECT-INTERNAL/MANAGEMENT/VISION.md"

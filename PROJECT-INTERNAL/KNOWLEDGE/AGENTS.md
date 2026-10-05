@@ -8,7 +8,7 @@ This directory contains **living documentation** that AI agents can and should u
 
 ## Directory Purpose
 
-The KNOWLEDGE folder contains accumulated wisdom about the project. Unlike GOVERNANCE (immutable) and GUIDES (human-maintained), these documents are designed to grow with the project.
+The KNOWLEDGE folder contains accumulated wisdom about the project. Unlike GOVERNANCE (approved revision only) and GUIDES (human-maintained), these documents are designed to grow with the project.
 
 **PERMISSION LEVEL:** AI agents CAN and SHOULD update these documents
 

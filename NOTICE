@@ -1,3 +1,31 @@
 Copyright 2026 Eris Margeta Kurdali
 
 The owner explicitly adopts Apache-2.0 for original MDAAI material and this packaging. Inherited MIT permissions and copyright notices remain in licenses/legacy-MIT.txt. This does not claim exclusive ownership of third-party material or retroactively change immutable source revisions.
+
+---
+
+Inherited canonical source licensing scope (retained in full):
+
+Canonical MDAAI repository working template
+Copyright 2026 Eris Margeta Kurdali
+
+Apache License, Version 2.0 is the default for Eris Margeta Kurdali's
+original contributions and new repository packaging, and for new
+owner-authored material in future repositories instantiated from this
+template, unless the owner explicitly selects another license.
+The complete license is in LICENSE.
+
+The previous template LICENSE is preserved verbatim in
+licenses/legacy-MIT.txt, including its original notice:
+Copyright (c) 2026 Eris Margeta
+
+Inherited MIT-covered material remains subject to its MIT terms.
+Retain the applicable MIT copyright and permission notices when copying
+or redistributing that material. This Apache-2.0 default does not revoke
+prior MIT grants, remove inherited notices, or relicense third-party or
+otherwise unlicensed inherited material. Preserve any additional
+file-level license, copyright, attribution, and NOTICE requirements.
+
+This notice describes licensing scope, not permission to change repository
+visibility. Future repositories remain subject to owner authorization and
+workspace governance.

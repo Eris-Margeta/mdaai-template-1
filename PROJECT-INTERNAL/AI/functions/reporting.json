@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Reporting Functions",
-  "description": "Function schemas for generating reports from the Work Order system",
-  "version": "1.0.0",
+  "description": "Declarative reporting contracts; no report generator or enforcement implementation is supplied. Normalize historical aliases for reading only, never rewrite closed bytes.",
+  "version": "1.1.0",
   "functions": [
     {
       "name": "generateSummaryReport",
@@ -29,7 +29,11 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": ["WO", "CWO", "DWO"]
+              "enum": [
+                "standard",
+                "corrective",
+                "diagnostic"
+              ]
             },
             "description": "Filter by work order types"
           },
@@ -39,17 +43,32 @@
           },
           "filterByStatus": {
             "type": "string",
-            "enum": ["COMPLETE", "PENDING", "VOID"],
+            "enum": [
+              "PENDING",
+              "IN PROGRESS",
+              "BLOCKED",
+              "COMPLETE",
+              "VOID"
+            ],
             "description": "Filter by status"
           },
           "groupBy": {
             "type": "string",
-            "enum": ["date", "executor", "type", "phase"],
+            "enum": [
+              "date",
+              "executor",
+              "type",
+              "phase"
+            ],
             "description": "How to group results"
           },
           "outputFormat": {
             "type": "string",
-            "enum": ["markdown", "json", "csv"],
+            "enum": [
+              "markdown",
+              "json",
+              "csv"
+            ],
             "default": "markdown",
             "description": "Output format for the report"
           }
@@ -61,12 +80,24 @@
           "summary": {
             "type": "object",
             "properties": {
-              "totalWorkOrders": { "type": "integer" },
-              "totalCorrectiveOrders": { "type": "integer" },
-              "totalDiagnosticOrders": { "type": "integer" },
-              "correctiveRate": { "type": "string" },
-              "totalTimeSpent": { "type": "string" },
-              "filesChanged": { "type": "integer" }
+              "totalWorkOrders": {
+                "type": "integer"
+              },
+              "totalCorrectiveOrders": {
+                "type": "integer"
+              },
+              "totalDiagnosticOrders": {
+                "type": "integer"
+              },
+              "correctiveRate": {
+                "type": "string"
+              },
+              "totalTimeSpent": {
+                "type": "string"
+              },
+              "filesChanged": {
+                "type": "integer"
+              }
             }
           },
           "workOrders": {
@@ -109,8 +140,14 @@
           "dateRange": {
             "type": "object",
             "properties": {
-              "from": { "type": "string", "format": "date" },
-              "to": { "type": "string", "format": "date" }
+              "from": {
+                "type": "string",
+                "format": "date"
+              },
+              "to": {
+                "type": "string",
+                "format": "date"
+              }
             }
           },
           "strictMode": {
@@ -125,7 +162,11 @@
         "properties": {
           "overallCompliance": {
             "type": "string",
-            "enum": ["COMPLIANT", "WARNINGS", "VIOLATIONS"]
+            "enum": [
+              "COMPLIANT",
+              "WARNINGS",
+              "VIOLATIONS"
+            ]
           },
           "score": {
             "type": "number",
@@ -138,16 +179,34 @@
             "items": {
               "type": "object",
               "properties": {
-                "check": { "type": "string" },
-                "status": { "type": "string", "enum": ["PASS", "WARN", "FAIL"] },
-                "message": { "type": "string" },
-                "affectedItems": { "type": "array", "items": { "type": "string" } }
+                "check": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "WARN",
+                    "FAIL"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                },
+                "affectedItems": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
           "recommendations": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
@@ -171,17 +230,43 @@
             "default": true
           }
         },
-        "required": ["checkpointId"]
+        "required": [
+          "checkpointId"
+        ]
       },
       "returns": {
         "type": "object",
         "properties": {
-          "workOrdersSinceLastCheckpoint": { "type": "integer" },
-          "tasksCompleted": { "type": "array", "items": { "type": "string" } },
-          "errorsResolved": { "type": "array", "items": { "type": "string" } },
-          "filesChanged": { "type": "array", "items": { "type": "string" } },
-          "totalTimeSpent": { "type": "string" },
-          "documentationUpdates": { "type": "array", "items": { "type": "string" } }
+          "workOrdersSinceLastCheckpoint": {
+            "type": "integer"
+          },
+          "tasksCompleted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errorsResolved": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filesChanged": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "totalTimeSpent": {
+            "type": "string"
+          },
+          "documentationUpdates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       }
     },
@@ -204,7 +289,9 @@
       "returns": {
         "type": "object",
         "properties": {
-          "totalAgents": { "type": "integer" },
+          "totalAgents": {
+            "type": "integer"
+          },
           "agentTree": {
             "type": "object",
             "description": "Hierarchical view of orchestrator and sub-agents"
@@ -213,7 +300,9 @@
             "type": "object",
             "additionalProperties": {
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             }
           },
           "conflicts": {
@@ -221,9 +310,18 @@
             "items": {
               "type": "object",
               "properties": {
-                "type": { "type": "string" },
-                "agents": { "type": "array", "items": { "type": "string" } },
-                "resolution": { "type": "string" }
+                "type": {
+                  "type": "string"
+                },
+                "agents": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "resolution": {
+                  "type": "string"
+                }
               }
             }
           }

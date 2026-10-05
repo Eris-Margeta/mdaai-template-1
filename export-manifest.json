@@ -11,8 +11,14 @@
       "sourceSha256": "03fcb1e13a1ea57e84b4ebc76db876d1bf0a1cd7807e38200b1904cd9b36269a",
       "sha256": "03fcb1e13a1ea57e84b4ebc76db876d1bf0a1cd7807e38200b1904cd9b36269a",
       "size": 2119,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".github/dependabot.example",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "03fcb1e13a1ea57e84b4ebc76db876d1bf0a1cd7807e38200b1904cd9b36269a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".github/workflows/.ci.example",
@@ -21,8 +27,14 @@
       "sourceSha256": "a04802c934e5adcbe166318373b560085cc4a9d6c2cd7c66f0720c6bf31d62fd",
       "sha256": "a04802c934e5adcbe166318373b560085cc4a9d6c2cd7c66f0720c6bf31d62fd",
       "size": 2033,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".github/workflows/.ci.example",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "a04802c934e5adcbe166318373b560085cc4a9d6c2cd7c66f0720c6bf31d62fd"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".github/workflows/.release.example",
@@ -31,8 +43,14 @@
       "sourceSha256": "9cb0480ef82c335f85f51e9a77b018cca0de412f169ab7acab548165697ada25",
       "sha256": "9cb0480ef82c335f85f51e9a77b018cca0de412f169ab7acab548165697ada25",
       "size": 2496,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".github/workflows/.release.example",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "9cb0480ef82c335f85f51e9a77b018cca0de412f169ab7acab548165697ada25"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".github/workflows/.sync-repo.example",
@@ -41,8 +59,14 @@
       "sourceSha256": "30a41eb23ef9c43a42644026fafe1d0abfc6f07b3d9fe1fbc3b2cf4cd2d5c2a9",
       "sha256": "30a41eb23ef9c43a42644026fafe1d0abfc6f07b3d9fe1fbc3b2cf4cd2d5c2a9",
       "size": 1808,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".github/workflows/.sync-repo.example",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "30a41eb23ef9c43a42644026fafe1d0abfc6f07b3d9fe1fbc3b2cf4cd2d5c2a9"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".gitignore",
@@ -51,8 +75,14 @@
       "sourceSha256": "5e2d041572146c3983c96fa8426dbe7a1367025f0df53f32bf5616b3520c794e",
       "sha256": "5e2d041572146c3983c96fa8426dbe7a1367025f0df53f32bf5616b3520c794e",
       "size": 3442,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": ".gitignore",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "5e2d041572146c3983c96fa8426dbe7a1367025f0df53f32bf5616b3520c794e"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".python-version",
@@ -67,22 +97,34 @@
     {
       "path": ".template/agent-rules.yaml",
       "sourcePath": ".template/agent-rules.yaml",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "a991fa542005132cb49ee0a6a4f2c4588881d0977b0c9f97197929843fcb59f5",
-      "sha256": "a991fa542005132cb49ee0a6a4f2c4588881d0977b0c9f97197929843fcb59f5",
-      "size": 13945,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "3ad8016201968c13aa9d38a135fac596afb63befa499ce7af148977c6e33a997",
+      "sha256": "3ad8016201968c13aa9d38a135fac596afb63befa499ce7af148977c6e33a997",
+      "size": 15057,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": ".template/agent-rules.yaml",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "a991fa542005132cb49ee0a6a4f2c4588881d0977b0c9f97197929843fcb59f5"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".template/scripts/sync-downstream.sh",
       "sourcePath": ".template/scripts/sync-downstream.sh",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "77c36f4145c3a72bc0c3083d562de931c0613109c183e8db0ccc74b9f811272f",
+      "sourceRevision": null,
+      "sourceSha256": "bbe781b5541be9ed6effa70087b580c9c21deeede511271bf7d8659382a6fb58",
       "sha256": "bbe781b5541be9ed6effa70087b580c9c21deeede511271bf7d8659382a6fb58",
       "size": 6279,
-      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".template/scripts/sync-downstream.sh",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "77c36f4145c3a72bc0c3083d562de931c0613109c183e8db0ccc74b9f811272f"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".template/scripts/sync-upstream.sh",
@@ -91,38 +133,63 @@
       "sourceSha256": "21bcbe960a08680b79de866dea6db734c70125bde3eb49ede7b90beca30d0691",
       "sha256": "21bcbe960a08680b79de866dea6db734c70125bde3eb49ede7b90beca30d0691",
       "size": 2483,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".template/scripts/sync-upstream.sh",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "21bcbe960a08680b79de866dea6db734c70125bde3eb49ede7b90beca30d0691"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".template/scripts/validate.sh",
       "sourcePath": ".template/scripts/validate.sh",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "26c691a363f5b64fdb877789b12e78b7788dad22a678d093aef1d4beddddf45a",
-      "sha256": "7236ca6e71f519be3991376583f59b12ce812a096d441c90d245a18e793823ba",
-      "size": 8050,
-      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
-      "role": "optional"
+      "sourceRevision": null,
+      "sourceSha256": "13eb76fc4a46a1fe64e7aa1f9287737b091769e11ca2254b005f760fa594a0a5",
+      "sha256": "13eb76fc4a46a1fe64e7aa1f9287737b091769e11ca2254b005f760fa594a0a5",
+      "size": 8065,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": ".template/scripts/validate.sh",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "26c691a363f5b64fdb877789b12e78b7788dad22a678d093aef1d4beddddf45a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": ".template/sync-manifest.yaml",
       "sourcePath": ".template/sync-manifest.yaml",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "afb06ee6f171b01ebdeb057c8368743d6e903b559002e6594828db7aa93f8db5",
-      "sha256": "eaf7aac67b32e5be28e01772ce84467474d89f2368ae573896c4430d3c895645",
-      "size": 5488,
-      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "46bec8bf2c836790bcf3ca635e5d7f64466fb1ab138c3bc6f02fbc732542b87d",
+      "sha256": "46bec8bf2c836790bcf3ca635e5d7f64466fb1ab138c3bc6f02fbc732542b87d",
+      "size": 5609,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": ".template/sync-manifest.yaml",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "afb06ee6f171b01ebdeb057c8368743d6e903b559002e6594828db7aa93f8db5"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "AGENTS.md",
       "sourcePath": "AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "d9087e12d0f79ea8e87c2c147a1d0a5907579c1854e71ffc49f3533096801982",
-      "sha256": "26d90696832acef61d428f68931f483d5efe1f4ac8095c8329aa4afea388251a",
-      "size": 8068,
-      "transformation": "owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "7d9eccf4a1cbd26b6eff008501b9cd1e20f4794f89c239a1516fc5a5c4147280",
+      "sha256": "1f5ad145f5584874c2dcbb0a7fb272ee42de6874de61bdea2c3f2700c51f7fdd",
+      "size": 9235,
+      "transformation": "Exact current canonical source bytes; source base is historical only; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "d9087e12d0f79ea8e87c2c147a1d0a5907579c1854e71ffc49f3533096801982"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "publicReleaseAdaptation": "Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins."
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -131,8 +198,14 @@
       "sourceSha256": "99355d573d66ad348eaecb5fb2714fb303984349e544beae61ca9b1dec77500a",
       "sha256": "99355d573d66ad348eaecb5fb2714fb303984349e544beae61ca9b1dec77500a",
       "size": 1994,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "CODE_OF_CONDUCT.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "99355d573d66ad348eaecb5fb2714fb303984349e544beae61ca9b1dec77500a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -141,8 +214,14 @@
       "sourceSha256": "522e364d883e132ab096088ac02c5ed7a6b3db226eb95426998830e19c2309ba",
       "sha256": "363bab5ce3c59c7d19d5f39b7a972dff4fe9745a0ed49f2a7874cc69684ff0f1",
       "size": 283,
-      "transformation": "none; owner-authorized Apache-2.0 packaging/Python pin/documentation revision; original source hash retained",
-      "role": "required"
+      "transformation": "Preserved public contribution and reviewed index admission workflow; not a verbatim canonical contribution guide",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "CONTRIBUTING.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "522e364d883e132ab096088ac02c5ed7a6b3db226eb95426998830e19c2309ba"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "Justfile",
@@ -151,78 +230,127 @@
       "sourceSha256": "9cbe7fc7aaa282e3bcd8736ae1b26ff9e87848407ed1b8384737f903bc1e30ff",
       "sha256": "9cbe7fc7aaa282e3bcd8736ae1b26ff9e87848407ed1b8384737f903bc1e30ff",
       "size": 4301,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "Justfile",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "9cbe7fc7aaa282e3bcd8736ae1b26ff9e87848407ed1b8384737f903bc1e30ff"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "LICENSE",
       "sourcePath": "LICENSE",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82",
+      "sourceRevision": null,
+      "sourceSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "size": 11358,
-      "transformation": "none; owner-authorized Apache-2.0 packaging/Python pin/documentation revision; original source hash retained",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "LICENSE",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "NOTICE",
       "sourcePath": "NOTICE",
-      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
-      "sourceSha256": "f14ad062071a1f15472d715a3e2dcaf8942a518ce08faa8af6a9b23744cc519f",
-      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "sourceRevision": null,
+      "sourceSha256": "5110528de7dc98f812f3f18c7ed60359f6c3cab3772ad6e37b5e08c730dff70a",
+      "transformation": "Preserved full existing public NOTICE plus complete current canonical NOTICE; no inherited licensing terms removed",
       "role": "required",
-      "sha256": "f14ad062071a1f15472d715a3e2dcaf8942a518ce08faa8af6a9b23744cc519f",
-      "size": 323
+      "sha256": "0c3954403e3ff7528f105f583a089acad0fd9c1284dd4ab702877a50cb7eaafa",
+      "size": 1511,
+      "historicalSource": {
+        "sourcePath": "NOTICE",
+        "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+        "sourceSha256": "f14ad062071a1f15472d715a3e2dcaf8942a518ce08faa8af6a9b23744cc519f"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/AGENTS.md",
       "sourcePath": "PROJECT-INTERNAL/AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "ab8964b710c4adc549d6d5a3867522910c66878684f8a6585d894e038097478b",
-      "sha256": "ab8964b710c4adc549d6d5a3867522910c66878684f8a6585d894e038097478b",
-      "size": 3950,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "65671624f3809be021d3c8bc238110a166542eeb5caa00aad7b83b11b1d2dd32",
+      "sha256": "65671624f3809be021d3c8bc238110a166542eeb5caa00aad7b83b11b1d2dd32",
+      "size": 5066,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "ab8964b710c4adc549d6d5a3867522910c66878684f8a6585d894e038097478b"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/AI/AGENTS.md",
       "sourcePath": "PROJECT-INTERNAL/AI/AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "0281eb67bfce2f223f205e1c0cbd02a9a0d20a358bdf15f8bcfa0b2899cd1398",
-      "sha256": "0281eb67bfce2f223f205e1c0cbd02a9a0d20a358bdf15f8bcfa0b2899cd1398",
-      "size": 2439,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "3e7511add669e3a8a216b6be57f45d68c5cb983594ca9457aed86f50b7677c64",
+      "sha256": "3e7511add669e3a8a216b6be57f45d68c5cb983594ca9457aed86f50b7677c64",
+      "size": 3663,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/AI/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "0281eb67bfce2f223f205e1c0cbd02a9a0d20a358bdf15f8bcfa0b2899cd1398"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/AI/functions/registry.json",
       "sourcePath": "PROJECT-INTERNAL/AI/functions/registry.json",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "26f0830c540d90622037bb32e4a00ff80baa76e74064e065cd22c766c687c09b",
-      "sha256": "26f0830c540d90622037bb32e4a00ff80baa76e74064e065cd22c766c687c09b",
-      "size": 6005,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "019445cfdcbcc60e2fc7289e3a959da0b9f2718923d2517020971479fdb83413",
+      "sha256": "b2422934d0dcb79ad1e48c9b2282ba36124357420c9bbdf3f917a7a23f9aa239",
+      "size": 18176,
+      "transformation": "Exact current canonical source bytes; source base is historical only; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/AI/functions/registry.json",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "26f0830c540d90622037bb32e4a00ff80baa76e74064e065cd22c766c687c09b"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "publicReleaseAdaptation": "Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins."
     },
     {
       "path": "PROJECT-INTERNAL/AI/functions/reporting.json",
       "sourcePath": "PROJECT-INTERNAL/AI/functions/reporting.json",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "891e8b337dcf8d922e0ed6dafa5d9e6f6b204ef2e78386932cb4b57967e321ff",
-      "sha256": "891e8b337dcf8d922e0ed6dafa5d9e6f6b204ef2e78386932cb4b57967e321ff",
-      "size": 7289,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "c097bb34c2d88d37f4ab00896b3d82b13b9d114b3f1abdf263e5aafaa9ed670d",
+      "sha256": "c097bb34c2d88d37f4ab00896b3d82b13b9d114b3f1abdf263e5aafaa9ed670d",
+      "size": 8871,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/AI/functions/reporting.json",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "891e8b337dcf8d922e0ed6dafa5d9e6f6b204ef2e78386932cb4b57967e321ff"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/AI/functions/work-orders.json",
       "sourcePath": "PROJECT-INTERNAL/AI/functions/work-orders.json",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "4584cc00e85c759be5e9f51fda8df8dbd573f4978ecf3cf61e7788eb8661ad26",
-      "sha256": "4584cc00e85c759be5e9f51fda8df8dbd573f4978ecf3cf61e7788eb8661ad26",
-      "size": 11445,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "4fd6bf3d25fcc527cc4d9a3e74b25dc3ee9ccbbf34999633d6f12adc17b931a4",
+      "sha256": "4fd6bf3d25fcc527cc4d9a3e74b25dc3ee9ccbbf34999633d6f12adc17b931a4",
+      "size": 21392,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/AI/functions/work-orders.json",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "4584cc00e85c759be5e9f51fda8df8dbd573f4978ecf3cf61e7788eb8661ad26"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/ANALYSIS/AGENTS.md",
@@ -231,8 +359,14 @@
       "sourceSha256": "9cc1543cc50cca13ddadca7485de7a2c7a65c63d3639314fcc16a9fdc919b993",
       "sha256": "9cc1543cc50cca13ddadca7485de7a2c7a65c63d3639314fcc16a9fdc919b993",
       "size": 2641,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/ANALYSIS/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "9cc1543cc50cca13ddadca7485de7a2c7a65c63d3639314fcc16a9fdc919b993"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/ANALYSIS/analysis-report-template.md",
@@ -241,8 +375,14 @@
       "sourceSha256": "9f902e4ba0bdae06df4d61a286f88c1fe829379561b662f596e5d6dfc4d16f4b",
       "sha256": "9f902e4ba0bdae06df4d61a286f88c1fe829379561b662f596e5d6dfc4d16f4b",
       "size": 1863,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/ANALYSIS/analysis-report-template.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "9f902e4ba0bdae06df4d61a286f88c1fe829379561b662f596e5d6dfc4d16f4b"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/ARCHITECTURE/ADR-000-record-architecture-decisions.md",
@@ -251,8 +391,14 @@
       "sourceSha256": "df06ede84cdccf25750f70b815f8a66011627970f6bfef94f13b7df201411e80",
       "sha256": "df06ede84cdccf25750f70b815f8a66011627970f6bfef94f13b7df201411e80",
       "size": 3185,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/ARCHITECTURE/ADR-000-record-architecture-decisions.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "df06ede84cdccf25750f70b815f8a66011627970f6bfef94f13b7df201411e80"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/ARCHITECTURE/AGENTS.md",
@@ -261,8 +407,14 @@
       "sourceSha256": "c2cfa9f3a2fc2cfeda3a3f1c404e3e58277816d9b5fc9701aff295dbc7175beb",
       "sha256": "c2cfa9f3a2fc2cfeda3a3f1c404e3e58277816d9b5fc9701aff295dbc7175beb",
       "size": 2335,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/ARCHITECTURE/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "c2cfa9f3a2fc2cfeda3a3f1c404e3e58277816d9b5fc9701aff295dbc7175beb"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/ARCHITECTURE/adr-template.md",
@@ -271,8 +423,14 @@
       "sourceSha256": "5d6080a2629f946d9a933e6ec4c28c13c0eb64dfeb577eb83e792b89f70e6308",
       "sha256": "5d6080a2629f946d9a933e6ec4c28c13c0eb64dfeb577eb83e792b89f70e6308",
       "size": 3339,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/ARCHITECTURE/adr-template.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "5d6080a2629f946d9a933e6ec4c28c13c0eb64dfeb577eb83e792b89f70e6308"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/CHECKPOINTS/AGENTS.md",
@@ -281,18 +439,30 @@
       "sourceSha256": "bda6b6e9eecd5e17dd14f3d1cc8b503a1b058b26b7a5cab59d3d3873bfced142",
       "sha256": "bda6b6e9eecd5e17dd14f3d1cc8b503a1b058b26b7a5cab59d3d3873bfced142",
       "size": 2554,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/CHECKPOINTS/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "bda6b6e9eecd5e17dd14f3d1cc8b503a1b058b26b7a5cab59d3d3873bfced142"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/CHECKPOINTS/checkpoint-template.md",
       "sourcePath": "PROJECT-INTERNAL/CHECKPOINTS/checkpoint-template.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "7923156d37cfee258e528eddd0d62c2eb24bb12126c359801fcaa2c5c67687dc",
-      "sha256": "7923156d37cfee258e528eddd0d62c2eb24bb12126c359801fcaa2c5c67687dc",
-      "size": 4743,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "66fcf79b6db3fed16d7f4b5d382a290aa48f7a76c8f637a9cacb5936441d3226",
+      "sha256": "66fcf79b6db3fed16d7f4b5d382a290aa48f7a76c8f637a9cacb5936441d3226",
+      "size": 4742,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/CHECKPOINTS/checkpoint-template.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "7923156d37cfee258e528eddd0d62c2eb24bb12126c359801fcaa2c5c67687dc"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/CLASSIFICATION-REGULATIONS.md",
@@ -301,28 +471,47 @@
       "sourceSha256": "64914e1ef46859747ab39616fee8ae1e2d472f2c14bdd726860c62f91b3d3b02",
       "sha256": "64914e1ef46859747ab39616fee8ae1e2d472f2c14bdd726860c62f91b3d3b02",
       "size": 4449,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/CLASSIFICATION-REGULATIONS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "64914e1ef46859747ab39616fee8ae1e2d472f2c14bdd726860c62f91b3d3b02"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/AGENTS.md",
       "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "c91e228fd0e3c7e1b7fa45a9d49f28678ea4e7a0636be28f783210576c78dad1",
-      "sha256": "c91e228fd0e3c7e1b7fa45a9d49f28678ea4e7a0636be28f783210576c78dad1",
-      "size": 2037,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "a6119b1597fc5194894631c8b51d95c9433bcc2c9ae5de18198d98418045d7ef",
+      "sha256": "a6119b1597fc5194894631c8b51d95c9433bcc2c9ae5de18198d98418045d7ef",
+      "size": 3149,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "c91e228fd0e3c7e1b7fa45a9d49f28678ea4e7a0636be28f783210576c78dad1"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md",
       "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "f264ce505ec1e31c3f435b6f63164f6b2783dd3f97e254673e6086c97685aa86",
-      "sha256": "f264ce505ec1e31c3f435b6f63164f6b2783dd3f97e254673e6086c97685aa86",
-      "size": 20854,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "8f839e516fc8bb9d45243ee3a0d489560a643516e5e4005094802a655985262e",
+      "sha256": "5a8aaf6caf7f90e28023a0b4000ec9a8d05bc8e2945d7ab7910c7359f83a0e72",
+      "size": 20849,
+      "transformation": "Exact current canonical source bytes; source base is historical only; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/AI-INSTRUCTIONS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "f264ce505ec1e31c3f435b6f63164f6b2783dd3f97e254673e6086c97685aa86"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "publicReleaseAdaptation": "Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins."
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/BETA-PHASE-PROTOCOL.md",
@@ -331,8 +520,14 @@
       "sourceSha256": "507b1b1ad30d51b66de60da5e7924f4067b71fc75a206a14ac28a3b07ab8e0ea",
       "sha256": "507b1b1ad30d51b66de60da5e7924f4067b71fc75a206a14ac28a3b07ab8e0ea",
       "size": 14577,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/BETA-PHASE-PROTOCOL.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "507b1b1ad30d51b66de60da5e7924f4067b71fc75a206a14ac28a3b07ab8e0ea"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/CHECKPOINT-PROTOCOL.md",
@@ -341,8 +536,14 @@
       "sourceSha256": "714a8710af5897dcdbfa25d469a96a7e901f3c9c03fb8fa1debf1937d402ee1a",
       "sha256": "714a8710af5897dcdbfa25d469a96a7e901f3c9c03fb8fa1debf1937d402ee1a",
       "size": 7163,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/CHECKPOINT-PROTOCOL.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "714a8710af5897dcdbfa25d469a96a7e901f3c9c03fb8fa1debf1937d402ee1a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/DOCUMENTATION-PROTOCOL.md",
@@ -351,8 +552,14 @@
       "sourceSha256": "8698ed0b9169dbe22bae5d4924ad93d99b6a76c97c2e4705a13d295798aa33f2",
       "sha256": "8698ed0b9169dbe22bae5d4924ad93d99b6a76c97c2e4705a13d295798aa33f2",
       "size": 11776,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/DOCUMENTATION-PROTOCOL.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "8698ed0b9169dbe22bae5d4924ad93d99b6a76c97c2e4705a13d295798aa33f2"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/LIFECYCLE-PHASES-PROTOCOL.md",
@@ -361,28 +568,46 @@
       "sourceSha256": "68f2ad9e6994aa63e7de580da499940ec0a726da6e69494ba8310c64d11e4cc3",
       "sha256": "68f2ad9e6994aa63e7de580da499940ec0a726da6e69494ba8310c64d11e4cc3",
       "size": 12547,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/LIFECYCLE-PHASES-PROTOCOL.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "68f2ad9e6994aa63e7de580da499940ec0a726da6e69494ba8310c64d11e4cc3"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md",
       "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "585cf513bf8efdfd213664844eedde380d9412ce7618cfe402aa638da4be1657",
-      "sha256": "585cf513bf8efdfd213664844eedde380d9412ce7618cfe402aa638da4be1657",
-      "size": 9854,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "04dbf6ffc2905482e0b7540e6a1b96fa74f1e1adc4fb8725602c766de3b0fa01",
+      "sha256": "04dbf6ffc2905482e0b7540e6a1b96fa74f1e1adc4fb8725602c766de3b0fa01",
+      "size": 10389,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/MULTI-AGENT-PROTOCOL.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "585cf513bf8efdfd213664844eedde380d9412ce7618cfe402aa638da4be1657"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md",
       "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "125708f7c9851f030fc3ac8064e7ecca06b7bf025e8094f882826d1e0d00123b",
-      "sha256": "125708f7c9851f030fc3ac8064e7ecca06b7bf025e8094f882826d1e0d00123b",
-      "size": 8908,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "9bc902addc3bd35f5087aa9a0b5ed3c2b933d85024040e5c0604cdb9e5cb146d",
+      "sha256": "9bc902addc3bd35f5087aa9a0b5ed3c2b933d85024040e5c0604cdb9e5cb146d",
+      "size": 7478,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GOVERNANCE/WORK-ORDER-PROTOCOL.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "125708f7c9851f030fc3ac8064e7ecca06b7bf025e8094f882826d1e0d00123b"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/AGENTS.md",
@@ -391,8 +616,14 @@
       "sourceSha256": "199285a4748ee8f294f6f2f1c236e99200911529f7244b3dbb5b658cf5468f4f",
       "sha256": "199285a4748ee8f294f6f2f1c236e99200911529f7244b3dbb5b658cf5468f4f",
       "size": 2706,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "199285a4748ee8f294f6f2f1c236e99200911529f7244b3dbb5b658cf5468f4f"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/CI-CD-PIPELINE-DOCTRINE.md",
@@ -401,8 +632,14 @@
       "sourceSha256": "1ee817d72c1f3926f8b8e1de02b394ad8b29cbe322e25b2762601ebd767f5b31",
       "sha256": "1ee817d72c1f3926f8b8e1de02b394ad8b29cbe322e25b2762601ebd767f5b31",
       "size": 8715,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/CI-CD-PIPELINE-DOCTRINE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "1ee817d72c1f3926f8b8e1de02b394ad8b29cbe322e25b2762601ebd767f5b31"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md",
@@ -411,8 +648,14 @@
       "sourceSha256": "773c072fbd457b7c33b9a4ddf4ffe18daecc00b97c87459c5bcfc6f10aff12d8",
       "sha256": "773c072fbd457b7c33b9a4ddf4ffe18daecc00b97c87459c5bcfc6f10aff12d8",
       "size": 7149,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/CODE-PHILOSOPHY.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "773c072fbd457b7c33b9a4ddf4ffe18daecc00b97c87459c5bcfc6f10aff12d8"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/GO-ENTERPRISE-CODE-DOCTRINE.md",
@@ -421,8 +664,14 @@
       "sourceSha256": "9b35ed1ab4e9849b1fba24dfeb64252708445238f5b8d20911b41e8baeb56765",
       "sha256": "9b35ed1ab4e9849b1fba24dfeb64252708445238f5b8d20911b41e8baeb56765",
       "size": 7693,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/GO-ENTERPRISE-CODE-DOCTRINE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "9b35ed1ab4e9849b1fba24dfeb64252708445238f5b8d20911b41e8baeb56765"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/HTML-CSS-ENTERPRISE-CODE-DOCTRINE.md",
@@ -431,8 +680,14 @@
       "sourceSha256": "0ffcf5c0172e8e0f4406dea8e2f25f7245e69b0028d4486039b0e842d812bcb7",
       "sha256": "0ffcf5c0172e8e0f4406dea8e2f25f7245e69b0028d4486039b0e842d812bcb7",
       "size": 8493,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/HTML-CSS-ENTERPRISE-CODE-DOCTRINE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "0ffcf5c0172e8e0f4406dea8e2f25f7245e69b0028d4486039b0e842d812bcb7"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/HTML-CSS-STYLE-GUIDE.md",
@@ -441,8 +696,14 @@
       "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size": 0,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/HTML-CSS-STYLE-GUIDE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/NODE-ENTERPRISE-CODE-DOCTRINE.md",
@@ -451,8 +712,14 @@
       "sourceSha256": "f7843dd3aea059a321036f3febaf899e86bff257a66dd7fc7613660938d505d6",
       "sha256": "f7843dd3aea059a321036f3febaf899e86bff257a66dd7fc7613660938d505d6",
       "size": 8307,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/NODE-ENTERPRISE-CODE-DOCTRINE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "f7843dd3aea059a321036f3febaf899e86bff257a66dd7fc7613660938d505d6"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/PYTHON-ENTERPRISE-CODE-DOCTRINE.md",
@@ -461,18 +728,30 @@
       "sourceSha256": "b1a861cfada5dcdace5b5894f5d2f93ec6d1823a60edb558c1b794814577d75b",
       "sha256": "b1a861cfada5dcdace5b5894f5d2f93ec6d1823a60edb558c1b794814577d75b",
       "size": 7959,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/PYTHON-ENTERPRISE-CODE-DOCTRINE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "b1a861cfada5dcdace5b5894f5d2f93ec6d1823a60edb558c1b794814577d75b"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md",
       "sourcePath": "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "e31f04b163c4c4a551e0b71460aef53d5d86501bd4a4af64cd71b80cd6a879e7",
-      "sha256": "e31f04b163c4c4a551e0b71460aef53d5d86501bd4a4af64cd71b80cd6a879e7",
-      "size": 8556,
-      "transformation": "none",
-      "role": "optional"
+      "sourceRevision": null,
+      "sourceSha256": "e9f117212b425307363b19c48f27f66129e066e4e4da97439101309eb61c607e",
+      "sha256": "e9f117212b425307363b19c48f27f66129e066e4e4da97439101309eb61c607e",
+      "size": 8553,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/RUST-ENTERPRISE-CODE-DOCTRINE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "e31f04b163c4c4a551e0b71460aef53d5d86501bd4a4af64cd71b80cd6a879e7"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md",
@@ -481,18 +760,30 @@
       "sourceSha256": "742238053f804af3b93fdd76c6a68017f19a4f5682fb34441f29cc5731db6c8b",
       "sha256": "742238053f804af3b93fdd76c6a68017f19a4f5682fb34441f29cc5731db6c8b",
       "size": 8442,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/GUIDES/TESTING-PHILOSOPHY.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "742238053f804af3b93fdd76c6a68017f19a4f5682fb34441f29cc5731db6c8b"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/KNOWLEDGE/AGENTS.md",
       "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "31e783759b329d937759750d8ffeee26c25881aabf1376c427a1fa109e127284",
-      "sha256": "31e783759b329d937759750d8ffeee26c25881aabf1376c427a1fa109e127284",
-      "size": 2763,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "eeadb08e9366c8248d8ad8aefdbf6c7ddd1af30d63af855e3a92c8fe34a1ea4b",
+      "sha256": "eeadb08e9366c8248d8ad8aefdbf6c7ddd1af30d63af855e3a92c8fe34a1ea4b",
+      "size": 2776,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "31e783759b329d937759750d8ffeee26c25881aabf1376c427a1fa109e127284"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPER-GUIDE.md",
@@ -501,8 +792,14 @@
       "sourceSha256": "70e100c8b5240886810bde6eab8c9b2fe92fd97b0d250bf7d54ef9dac3dd9a46",
       "sha256": "70e100c8b5240886810bde6eab8c9b2fe92fd97b0d250bf7d54ef9dac3dd9a46",
       "size": 7020,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPER-GUIDE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "70e100c8b5240886810bde6eab8c9b2fe92fd97b0d250bf7d54ef9dac3dd9a46"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPMENT-PRACTICES.md",
@@ -511,8 +808,14 @@
       "sourceSha256": "570f66e3ec45517125c573892fc127a60205fa783441209344dcca145a7b3846",
       "sha256": "570f66e3ec45517125c573892fc127a60205fa783441209344dcca145a7b3846",
       "size": 2342,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/DEVELOPMENT-PRACTICES.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "570f66e3ec45517125c573892fc127a60205fa783441209344dcca145a7b3846"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/KNOWLEDGE/ERROR-CATALOG.md",
@@ -521,8 +824,14 @@
       "sourceSha256": "a6c114bbb1db3ca83ba0e937782a047e19c549d08a329b1a1f4e58e5d074128c",
       "sha256": "a6c114bbb1db3ca83ba0e937782a047e19c549d08a329b1a1f4e58e5d074128c",
       "size": 2134,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/ERROR-CATALOG.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "a6c114bbb1db3ca83ba0e937782a047e19c549d08a329b1a1f4e58e5d074128c"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/KNOWLEDGE/GOTCHAS.md",
@@ -531,8 +840,14 @@
       "sourceSha256": "e18f91b030c63bb43a2bebf867ec84252e26451f6c0aa21b2cb47fd30ed55a86",
       "sha256": "e18f91b030c63bb43a2bebf867ec84252e26451f6c0aa21b2cb47fd30ed55a86",
       "size": 2088,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/GOTCHAS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "e18f91b030c63bb43a2bebf867ec84252e26451f6c0aa21b2cb47fd30ed55a86"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/KNOWLEDGE/TOOL-NOTES.md",
@@ -541,18 +856,30 @@
       "sourceSha256": "059cc7754cff37ef285945dbf7cb2f19315097fb843fb386d2f2ce05b4f1a4ed",
       "sha256": "059cc7754cff37ef285945dbf7cb2f19315097fb843fb386d2f2ce05b4f1a4ed",
       "size": 1891,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/KNOWLEDGE/TOOL-NOTES.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "059cc7754cff37ef285945dbf7cb2f19315097fb843fb386d2f2ce05b4f1a4ed"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/MANAGEMENT/AGENTS.md",
       "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "f693bade9e7b1713560e88b2ee72c5bcfe1fe46de0a3542be03b27c3685700a6",
-      "sha256": "f693bade9e7b1713560e88b2ee72c5bcfe1fe46de0a3542be03b27c3685700a6",
-      "size": 2858,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "cb621bb0de13c87151b6245b1c4446ca4821d97e80f2bd943314e0bfa4de2f3b",
+      "sha256": "cb621bb0de13c87151b6245b1c4446ca4821d97e80f2bd943314e0bfa4de2f3b",
+      "size": 3932,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "f693bade9e7b1713560e88b2ee72c5bcfe1fe46de0a3542be03b27c3685700a6"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md",
@@ -561,18 +888,30 @@
       "sourceSha256": "a2f83b31d5485c64ac9861eebd4a77c0081ae376af0faa3d72801b15635ae1f5",
       "sha256": "a2f83b31d5485c64ac9861eebd4a77c0081ae376af0faa3d72801b15635ae1f5",
       "size": 3739,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/ENVIRONMENT.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "a2f83b31d5485c64ac9861eebd4a77c0081ae376af0faa3d72801b15635ae1f5"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md",
       "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md",
-      "sourceRevision": "d118cd135bf96faa414ed1ce70d5fb60e1571e96",
-      "sourceSha256": "58b5476825e6013856bc33de6658c14473968443a5ab10374a603234b7f050e2",
-      "sha256": "58b5476825e6013856bc33de6658c14473968443a5ab10374a603234b7f050e2",
-      "size": 3429,
-      "transformation": "Restore authored blank initial scaffold; no source project history.",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "63cf60d668b7bb41ab484e46e4d91dcd3f24e68fb1cf637d6e70bea58183d368",
+      "sha256": "63cf60d668b7bb41ab484e46e4d91dcd3f24e68fb1cf637d6e70bea58183d368",
+      "size": 3982,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-ELABORATION.md",
+        "sourceRevision": "d118cd135bf96faa414ed1ce70d5fb60e1571e96",
+        "sourceSha256": "58b5476825e6013856bc33de6658c14473968443a5ab10374a603234b7f050e2"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-RULES.md",
@@ -581,8 +920,14 @@
       "sourceSha256": "5c41193e32534e5479e4715ebc1430f7962e3cc5abec6fd2353d240bfd236dc4",
       "sha256": "5c41193e32534e5479e4715ebc1430f7962e3cc5abec6fd2353d240bfd236dc4",
       "size": 3218,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/PROJECT-RULES.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "5c41193e32534e5479e4715ebc1430f7962e3cc5abec6fd2353d240bfd236dc4"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/MANAGEMENT/ROADMAP.md",
@@ -591,8 +936,14 @@
       "sourceSha256": "a0e1bc38a8bffe616ccaf1d23cd809be703e939fd91f516c54887ccb5d6e6bfe",
       "sha256": "a0e1bc38a8bffe616ccaf1d23cd809be703e939fd91f516c54887ccb5d6e6bfe",
       "size": 2329,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/ROADMAP.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "a0e1bc38a8bffe616ccaf1d23cd809be703e939fd91f516c54887ccb5d6e6bfe"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/MANAGEMENT/VISION.md",
@@ -601,8 +952,14 @@
       "sourceSha256": "b218eb5267a7d19299ac30c236019b7bde993f8a298099e02829edbcde14c74a",
       "sha256": "b218eb5267a7d19299ac30c236019b7bde993f8a298099e02829edbcde14c74a",
       "size": 2042,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/MANAGEMENT/VISION.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "b218eb5267a7d19299ac30c236019b7bde993f8a298099e02829edbcde14c74a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/NOTES.md",
@@ -611,8 +968,14 @@
       "sourceSha256": "f40f5599bcfd945c50144c65aaf7095c1ad06b10152ed80f1afd42def582c10f",
       "sha256": "f40f5599bcfd945c50144c65aaf7095c1ad06b10152ed80f1afd42def582c10f",
       "size": 559,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/NOTES.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "f40f5599bcfd945c50144c65aaf7095c1ad06b10152ed80f1afd42def582c10f"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/SCRATCH/.gitkeep",
@@ -621,8 +984,14 @@
       "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size": 0,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/SCRATCH/.gitkeep",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/SCRATCH/AGENTS.md",
@@ -631,8 +1000,14 @@
       "sourceSha256": "244288cee69595ef9be7728a2c24b43f9df83268400e12260939b14e5dde3d20",
       "sha256": "244288cee69595ef9be7728a2c24b43f9df83268400e12260939b14e5dde3d20",
       "size": 1235,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/SCRATCH/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "244288cee69595ef9be7728a2c24b43f9df83268400e12260939b14e5dde3d20"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/SCRATCH/TASK-TEMPLATE.md",
@@ -641,68 +1016,111 @@
       "sourceSha256": "64ca4edbcd69b5587e8ed3dabb3a9a648d68fabe38984f14e339e13e2c934080",
       "sha256": "64ca4edbcd69b5587e8ed3dabb3a9a648d68fabe38984f14e339e13e2c934080",
       "size": 739,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/SCRATCH/TASK-TEMPLATE.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "64ca4edbcd69b5587e8ed3dabb3a9a648d68fabe38984f14e339e13e2c934080"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/WORK-ORDERS/AGENTS.md",
       "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/AGENTS.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "4efbdb2094bb580fca1789380918e0de7b9af6ae77a22bff44c2dc8f12db9ebc",
-      "sha256": "4efbdb2094bb580fca1789380918e0de7b9af6ae77a22bff44c2dc8f12db9ebc",
-      "size": 2855,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "4e5ec7f382eb0fd3394fb9d5738cfb8775cec47874402c51230829a3e847fd50",
+      "sha256": "4e5ec7f382eb0fd3394fb9d5738cfb8775cec47874402c51230829a3e847fd50",
+      "size": 2350,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "4efbdb2094bb580fca1789380918e0de7b9af6ae77a22bff44c2dc8f12db9ebc"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/corrective-work-order-template.md",
       "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/corrective-work-order-template.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "fa7c42ef251da7669cd0efdcc62bf29220ebd6d9cd6f48287be4e4dc25141f45",
-      "sha256": "fa7c42ef251da7669cd0efdcc62bf29220ebd6d9cd6f48287be4e4dc25141f45",
-      "size": 2663,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "57093d1269a2ff63d6b6bef6b40ca9b7a09eb31e556f9c7bddb49cb74205a986",
+      "sha256": "57093d1269a2ff63d6b6bef6b40ca9b7a09eb31e556f9c7bddb49cb74205a986",
+      "size": 2730,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/CORRECTIVE/corrective-work-order-template.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "fa7c42ef251da7669cd0efdcc62bf29220ebd6d9cd6f48287be4e4dc25141f45"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/WORK-ORDERS/registry.json",
       "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/registry.json",
-      "sourceRevision": "d118cd135bf96faa414ed1ce70d5fb60e1571e96",
-      "sourceSha256": "804174387aac441e81dfdf306ce2dde9a11fe29d5cc1f9017ca7eebada6447ec",
-      "sha256": "804174387aac441e81dfdf306ce2dde9a11fe29d5cc1f9017ca7eebada6447ec",
-      "size": 395,
-      "transformation": "Restore authored blank initial scaffold; no source project history.",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "b9e74d4709926d59c23702c3c2cf353f2e2ddc9bd7153a3c03b01dbc4b3d316c",
+      "sha256": "d1dbefa8f32f24e58a8660a62ccbd305f3e786ba3c3e3e69c71c3e9914ac3b52",
+      "size": 641,
+      "transformation": "Blank unexecuted scaffold; private terminal history excluded; metadata vocabulary aligned and no executed effects claimed",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/registry.json",
+        "sourceRevision": "d118cd135bf96faa414ed1ce70d5fb60e1571e96",
+        "sourceSha256": "804174387aac441e81dfdf306ce2dde9a11fe29d5cc1f9017ca7eebada6447ec"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "PROJECT-INTERNAL/WORK-ORDERS/work-order-template.md",
       "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/work-order-template.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "43112190393fe4bfb34592004d6cccbf1c18f79d278570fe8b2c769585bf9812",
-      "sha256": "43112190393fe4bfb34592004d6cccbf1c18f79d278570fe8b2c769585bf9812",
-      "size": 10570,
-      "transformation": "none",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "6d2b2a5ad11b17e761e6ae756db72aad0aa7af754733e73486f6a6dddca80ef9",
+      "sha256": "6d2b2a5ad11b17e761e6ae756db72aad0aa7af754733e73486f6a6dddca80ef9",
+      "size": 2429,
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "PROJECT-INTERNAL/WORK-ORDERS/work-order-template.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "43112190393fe4bfb34592004d6cccbf1c18f79d278570fe8b2c769585bf9812"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "README.md",
       "sourcePath": "README.md",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
-      "sha256": "b608797f7cd530ca6b138abd974fee10e88d4d9afbc972f26d272e87339bf1b7",
-      "size": 1705,
-      "transformation": "owner-authored canonical packaging README; corrected public website backlink; original source revision and hash retained; owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; theme-aware original MDAAI logo; historical source fields retained",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "f239b46de7029f7946268a2fbc3581a07291e6c4cec8b86077e091dca9ed2591",
+      "sha256": "5038e8e4a791393f6e873314d8f3880b15a6ec7c4fa94a326951e4cff204c773",
+      "size": 2365,
+      "transformation": "Public package wrapper with independent release identity, logo and reviewed index/site links; current canonical README source retained in README.source.md; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "README.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "publicReleaseAdaptation": "Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins."
     },
     {
       "path": "README.source.md",
-      "sourcePath": "README.source.md",
-      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
-      "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a",
-      "transformation": "owner-authored packaging addition; not original upstream bytes; owner-authorized provider-neutral entry guidance and removal of obsolete compatibility entry references; historical source fields retained",
+      "sourcePath": "README.md",
+      "sourceRevision": null,
+      "sourceSha256": "f239b46de7029f7946268a2fbc3581a07291e6c4cec8b86077e091dca9ed2591",
+      "transformation": "Exact current canonical source bytes; source base is historical only",
       "role": "required",
-      "sha256": "439eba8a31732b688df335cceabbb18f4e8b6f7331bfb3f47d2e35a1e3252f9d",
-      "size": 8427
+      "sha256": "f239b46de7029f7946268a2fbc3581a07291e6c4cec8b86077e091dca9ed2591",
+      "size": 9883,
+      "historicalSource": {
+        "sourcePath": "README.source.md",
+        "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+        "sourceSha256": "91159c3f5d7b68929fc97e33be0a60210a2b20ab8c80c66e7b3b6268cbaa478a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "SECURITY.md",
@@ -711,18 +1129,30 @@
       "sourceSha256": "379360f59ae5ff03349f7e7008bddb07e9befc769e6290599b8d1427a3e77148",
       "sha256": "379360f59ae5ff03349f7e7008bddb07e9befc769e6290599b8d1427a3e77148",
       "size": 2373,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "SECURITY.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "379360f59ae5ff03349f7e7008bddb07e9befc769e6290599b8d1427a3e77148"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "VERSION",
       "sourcePath": "VERSION",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
-      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "sourceRevision": null,
+      "sourceSha256": "44e161e4495cac2cf7858043e9e6418e9579f0ddcfae826f9a372622968ce066",
+      "sha256": "44e161e4495cac2cf7858043e9e6418e9579f0ddcfae826f9a372622968ce066",
       "size": 6,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "VERSION",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "assets/brand/logo-black.svg",
@@ -753,8 +1183,14 @@
       "sourceSha256": "528cdeb83a0af1a6ebd7b9652b910c7a825d397059534c5338ee9efe4806fc49",
       "sha256": "528cdeb83a0af1a6ebd7b9652b910c7a825d397059534c5338ee9efe4806fc49",
       "size": 3978,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/api-endpoint.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "528cdeb83a0af1a6ebd7b9652b910c7a825d397059534c5338ee9efe4806fc49"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/.templates/architecture-overview.md",
@@ -763,8 +1199,14 @@
       "sourceSha256": "192c30a89608b01879fc7e4d3ba6ba0ac97d58f346cc4a451666bc1edcf91f67",
       "sha256": "192c30a89608b01879fc7e4d3ba6ba0ac97d58f346cc4a451666bc1edcf91f67",
       "size": 7480,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/architecture-overview.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "192c30a89608b01879fc7e4d3ba6ba0ac97d58f346cc4a451666bc1edcf91f67"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/.templates/readme-folder.md",
@@ -773,8 +1215,14 @@
       "sourceSha256": "ea26b37415488a274197a970604dcde95255b9625e48ce796fb37916eded478d",
       "sha256": "ea26b37415488a274197a970604dcde95255b9625e48ce796fb37916eded478d",
       "size": 812,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/readme-folder.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "ea26b37415488a274197a970604dcde95255b9625e48ce796fb37916eded478d"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/.templates/readme-monorepo.md",
@@ -783,8 +1231,14 @@
       "sourceSha256": "41e05df7b1f1567ffbeeccb488659176eef1cd47b6b8aa44cc2f576d78b54409",
       "sha256": "41e05df7b1f1567ffbeeccb488659176eef1cd47b6b8aa44cc2f576d78b54409",
       "size": 5272,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/readme-monorepo.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "41e05df7b1f1567ffbeeccb488659176eef1cd47b6b8aa44cc2f576d78b54409"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/.templates/readme.md",
@@ -793,8 +1247,14 @@
       "sourceSha256": "d0a4151087f712af5c02afe6b3dee4b3ad00fe6110a477e387c6f55efae6272c",
       "sha256": "d0a4151087f712af5c02afe6b3dee4b3ad00fe6110a477e387c6f55efae6272c",
       "size": 3923,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/readme.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "d0a4151087f712af5c02afe6b3dee4b3ad00fe6110a477e387c6f55efae6272c"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/.templates/tutorial.md",
@@ -803,8 +1263,14 @@
       "sourceSha256": "305fe39c3f41b4568f0c7d9c68374840396aa5e3968a67db6304cff6c26449ea",
       "sha256": "305fe39c3f41b4568f0c7d9c68374840396aa5e3968a67db6304cff6c26449ea",
       "size": 1875,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/tutorial.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "305fe39c3f41b4568f0c7d9c68374840396aa5e3968a67db6304cff6c26449ea"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/.templates/user-guide-page.md",
@@ -813,8 +1279,14 @@
       "sourceSha256": "3616d4d104bd30d9aabf7fd227c134b09ee42b18fa240e1defd8084a1a9b2575",
       "sha256": "3616d4d104bd30d9aabf7fd227c134b09ee42b18fa240e1defd8084a1a9b2575",
       "size": 1555,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "docs/.templates/user-guide-page.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "3616d4d104bd30d9aabf7fd227c134b09ee42b18fa240e1defd8084a1a9b2575"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/AGENTS.md",
@@ -823,8 +1295,14 @@
       "sourceSha256": "4b71e18342cbc05c25298c0dbbb70317220c116f4cc2f7de828011eb83fe983f",
       "sha256": "4b71e18342cbc05c25298c0dbbb70317220c116f4cc2f7de828011eb83fe983f",
       "size": 3749,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "docs/AGENTS.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "4b71e18342cbc05c25298c0dbbb70317220c116f4cc2f7de828011eb83fe983f"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/assets/ai-workflow.svg",
@@ -833,8 +1311,14 @@
       "sourceSha256": "7d0cba710b14c59e83716c797df331d7adac0774f456e1240075a4c0aa5f07f9",
       "sha256": "7d0cba710b14c59e83716c797df331d7adac0774f456e1240075a4c0aa5f07f9",
       "size": 49473,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "docs/assets/ai-workflow.svg",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "7d0cba710b14c59e83716c797df331d7adac0774f456e1240075a4c0aa5f07f9"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/diagrams/ai-workflow.mmd",
@@ -843,8 +1327,14 @@
       "sourceSha256": "06fbdebbc4c62b9ff2f20c875c593378d65d57de259f7c4411a883ac636f0c86",
       "sha256": "06fbdebbc4c62b9ff2f20c875c593378d65d57de259f7c4411a883ac636f0c86",
       "size": 2131,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "docs/diagrams/ai-workflow.mmd",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "06fbdebbc4c62b9ff2f20c875c593378d65d57de259f7c4411a883ac636f0c86"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/diagrams/mermaid-config.json",
@@ -853,8 +1343,14 @@
       "sourceSha256": "a457dd9620ae3c17d75ce9f64ac6e07691b3526bda3efc85811bceaecb043ddb",
       "sha256": "a457dd9620ae3c17d75ce9f64ac6e07691b3526bda3efc85811bceaecb043ddb",
       "size": 49,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "docs/diagrams/mermaid-config.json",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "a457dd9620ae3c17d75ce9f64ac6e07691b3526bda3efc85811bceaecb043ddb"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "docs/index.md",
@@ -863,28 +1359,46 @@
       "sourceSha256": "caa4cf46a913c76f3596efab47d886d5200ef4486626706b6092ec1b9abd10bc",
       "sha256": "caa4cf46a913c76f3596efab47d886d5200ef4486626706b6092ec1b9abd10bc",
       "size": 818,
-      "transformation": "none",
-      "role": "required"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "docs/index.md",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "caa4cf46a913c76f3596efab47d886d5200ef4486626706b6092ec1b9abd10bc"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "licenses/legacy-MIT.txt",
       "sourcePath": "licenses/legacy-MIT.txt",
-      "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+      "sourceRevision": null,
       "sourceSha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82",
-      "transformation": "owner-authored packaging addition; not original upstream bytes",
+      "transformation": "Exact current canonical source bytes; source base is historical only",
       "role": "required",
       "sha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82",
-      "size": 1070
+      "size": 1070,
+      "historicalSource": {
+        "sourcePath": "licenses/legacy-MIT.txt",
+        "sourceRevision": "4ad670f9402e8699ed969ae719188196ef089aae",
+        "sourceSha256": "dd02548f1066030908ac45ec7252de62ac84ceeb87f56ef677f6d5772a672a82"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "project-meta.yaml",
       "sourcePath": "project-meta.yaml",
-      "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
-      "sourceSha256": "e39705526ca12d5ecf8cb70654840cfed739a69bd5d062dae3bdaf81535eb467",
-      "sha256": "f34bf31eec1d37b421706bce27a6dc2ec753a4ee78ab6e6f7c7bb9d6462871f2",
-      "size": 1827,
-      "transformation": "none; owner-authorized active default license metadata Apache-2.0",
-      "role": "required"
+      "sourceRevision": null,
+      "sourceSha256": "88ca8fec6d54ebd7470e52123dab0fdaca7a29c5d78d05a6dc8f980ac101b3d8",
+      "sha256": "f230f045d29ce04772e10ae411ea4537d5fe254dcb08fafa682158dadfab3097",
+      "size": 1910,
+      "transformation": "Preserved derived-project scaffold version; changed template source backlink to public template repository",
+      "role": "required",
+      "historicalSource": {
+        "sourcePath": "project-meta.yaml",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "e39705526ca12d5ecf8cb70654840cfed739a69bd5d062dae3bdaf81535eb467"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
     },
     {
       "path": "tools/sync-version.sh",
@@ -893,8 +1407,37 @@
       "sourceSha256": "ce1e5f1591993e905ebf2ec0d02b2eac117d9045502f303e023b19b549f4551a",
       "sha256": "ce1e5f1591993e905ebf2ec0d02b2eac117d9045502f303e023b19b549f4551a",
       "size": 1570,
-      "transformation": "none",
-      "role": "optional"
+      "transformation": "Exact current canonical source bytes; source base is historical only",
+      "role": "optional",
+      "historicalSource": {
+        "sourcePath": "tools/sync-version.sh",
+        "sourceRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+        "sourceSha256": "ce1e5f1591993e905ebf2ec0d02b2eac117d9045502f303e023b19b549f4551a"
+      },
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
+    },
+    {
+      "path": "TEMPLATE-IDENTITY.json",
+      "sourcePath": "TEMPLATE-IDENTITY.json",
+      "sourceRevision": null,
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "90a904fd9d06d189b3b3c52b226f12c79f1d611fd2d5d36689627ecc22bf5104",
+      "transformation": "Exact current canonical source bytes; local uncommitted candidate, not historical HEAD; Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins.",
+      "role": "required",
+      "sha256": "4a5bcb43f6493cc173ec61b031543d844030b23727df3c23fa7dee0602120bf5",
+      "size": 508,
+      "publicReleaseAdaptation": "Owner-authorized release metadata or substantive release-review correction; local upstream hashes remain qualified provenance, not current public source pins."
+    },
+    {
+      "path": ".gitattributes",
+      "sourcePath": ".gitattributes",
+      "sourceRevision": null,
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+      "sourceSha256": "06e95330e5fabe5da68cce58ac597c955789dfede84e287f120b9d0fd8c0c031",
+      "transformation": "Exact current canonical source bytes; local uncommitted candidate, not historical HEAD",
+      "role": "required",
+      "sha256": "06e95330e5fabe5da68cce58ac597c955789dfede84e287f120b9d0fd8c0c031",
+      "size": 277
     }
   ],
   "excluded": [
@@ -978,5 +1521,25 @@
       "sourcePath": "src/",
       "reason": "Laboratory-specific tooling, rollout policy, evidence or task history; not part of the portable six-file core."
     }
-  ]
+  ],
+  "releaseIdentity": {
+    "schemaVersion": 1,
+    "templateName": "MDAAI 1.0",
+    "releaseVersion": "1.0.1",
+    "releaseStatus": "RELEASE",
+    "protocolVersion": null,
+    "constitutionRevision": "1.8",
+    "origin": {
+      "templateVersionFile": "1.0.0",
+      "constitutionRevision": "1.7",
+      "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
+    },
+    "rationale": "Independent portable correction release; public Git commit identifies this package, not an upstream tag, protocol version, adoption or runtime enforcement."
+  },
+  "publicationGate": "Catalog/website adoption requires a reviewed index PR with exact public package commit pins. Paper remains private.",
+  "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8",
+  "sourceRevision": null,
+  "sourceState": "dirty-local-canonical-working-tree",
+  "sourceNote": "Base revision identifies historical Git ancestor only. Current per-file sourceSha256 identifies exported working bytes; null sourceRevision means no immutable source commit exists.",
+  "publicReleaseIdentity": "The containing public Git commit identifies this package; no self-referential commit field or upstream tag is asserted."
 }

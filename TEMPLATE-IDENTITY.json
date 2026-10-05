@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "templateName": "MDAAI 1.0",
+  "releaseVersion": "1.0.1",
+  "releaseStatus": "RELEASE",
+  "protocolVersion": null,
+  "constitutionRevision": "1.8",
+  "origin": {
+    "templateVersionFile": "1.0.0",
+    "constitutionRevision": "1.7",
+    "sourceBaseRevision": "ec57688e48f8ad12e60785173956d50386fee6b8"
+  },
+  "rationale": "Independent portable correction release; public Git commit identifies this package, not an upstream tag, protocol version, adoption or runtime enforcement."
+}

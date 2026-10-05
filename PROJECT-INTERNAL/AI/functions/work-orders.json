@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Work Order Functions",
-  "description": "Function schemas for creating Work Orders and Corrective Work Orders",
-  "version": "1.0.0",
+  "description": "Declarative function contracts; no executable adapter, locking, validation or enforcement is supplied by these schemas.",
+  "version": "1.1.0",
   "functions": [
     {
       "name": "createWorkOrder",
-      "description": "Creates a new Work Order document for completed tasks. Must be called after every task completion per AI-INSTRUCTIONS.md Article 6.",
+      "description": "Creates an authorized PENDING or IN PROGRESS Work Order BEFORE implementation; save and register it before edits. Completion evidence is supplied only on closure.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -46,70 +46,41 @@
             "properties": {
               "taskReference": {
                 "type": "string",
-                "description": "Reference to PROJECT-ELABORATION.md task (e.g., 'Phase 1, Point 2.3')"
+                "description": "Planning path/section OR exact dated direct operator request; not arbitrary external text."
               },
               "authorizedBy": {
                 "type": "string",
                 "description": "Human name who authorized or 'Backlog' for pre-approved tasks"
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "project-elaboration",
+                  "direct-operator-request"
+                ]
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "exclusions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
-            "required": ["taskReference", "authorizedBy"]
+            "required": [
+              "taskReference",
+              "authorizedBy",
+              "source",
+              "scope",
+              "exclusions"
+            ]
           },
           "description": {
             "type": "string",
-            "description": "Detailed description: what was implemented, why this approach, decisions made"
-          },
-          "filesChanged": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "path": {
-                  "type": "string",
-                  "description": "Relative path to file"
-                },
-                "action": {
-                  "type": "string",
-                  "enum": ["Created", "Modified", "Deleted", "Renamed"],
-                  "description": "Type of change"
-                },
-                "linesChanged": {
-                  "type": "string",
-                  "pattern": "^[+-]?[0-9]+,\\s*[+-]?[0-9]+$",
-                  "description": "Lines added/removed (e.g., '+50, -10')"
-                }
-              },
-              "required": ["path", "action", "linesChanged"]
-            },
-            "description": "List of all files changed"
-          },
-          "tests": {
-            "type": "object",
-            "properties": {
-              "unitTestsPass": { "type": "boolean" },
-              "integrationTestsPass": { "type": "boolean" },
-              "noRegressions": { "type": "boolean" },
-              "newTestsAdded": { "type": "boolean" }
-            },
-            "required": ["unitTestsPass", "integrationTestsPass", "noRegressions"]
-          },
-          "verification": {
-            "type": "object",
-            "properties": {
-              "buildStatus": {
-                "type": "string",
-                "enum": ["Pass", "Fail", "N/A"]
-              },
-              "testStatus": {
-                "type": "string",
-                "enum": ["Pass", "Fail", "N/A"]
-              },
-              "manualVerification": {
-                "type": "string",
-                "description": "Description of manual verification if applicable"
-              }
-            },
-            "required": ["buildStatus", "testStatus"]
+            "description": "Planned work and rationale, not a retrospective completion claim."
           },
           "timeExpenditure": {
             "type": "object",
@@ -120,10 +91,12 @@
               },
               "actual": {
                 "type": "string",
-                "description": "Actual time spent; adjusted for how much a human would take to perform a task(e.g., '3h 15m')"
+                "description": "Actual elapsed effort, recorded after execution; never inferred from a human estimate."
               }
             },
-            "required": ["actual"]
+            "required": [
+              "estimated"
+            ]
           },
           "materialExpenditure": {
             "type": "string",
@@ -133,11 +106,17 @@
           "documentationImpact": {
             "type": "object",
             "properties": {
-              "userFacingChange": { "type": "boolean" },
-              "docsUpdated": { "type": "boolean" },
+              "userFacingChange": {
+                "type": "boolean"
+              },
+              "docsUpdated": {
+                "type": "boolean"
+              },
               "filesChanged": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -150,17 +129,58 @@
             "properties": {
               "adrsReferenced": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               },
               "previousWOs": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               },
               "cwosResolved": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               }
             }
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "technicalSpecification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verificationSteps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "expectedOutcome": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN PROGRESS"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -173,55 +193,218 @@
           "subject",
           "authorization",
           "description",
-          "filesChanged",
-          "tests",
-          "verification",
-          "timeExpenditure"
-        ]
+          "objective",
+          "technicalSpecification",
+          "verificationSteps",
+          "expectedOutcome",
+          "status",
+          "rationale"
+        ],
+        "additionalProperties": false
       }
     },
     {
       "name": "createCorrectiveWorkOrder",
-      "description": "Creates a Corrective Work Order for error remediation. Required per AI-INSTRUCTIONS.md Article 7 when errors are discovered.",
+      "description": "Creates a saved/registered active CWO BEFORE corrective implementation. Root cause and prevention may be pending investigation; actual evidence required on closure.",
       "parameters": {
         "type": "object",
         "properties": {
           "sequenceNumber": {
             "type": "integer",
-            "description": "The reserved sequence number for CWO"
+            "description": "The reserved sequence number from registry (e.g., 1, 2, 3)"
           },
           "year": {
             "type": "string",
-            "pattern": "^[0-9]{4}$"
+            "pattern": "^[0-9]{4}$",
+            "description": "Four-digit year (e.g., '2026')"
           },
           "class": {
-            "type": "string"
+            "type": "string",
+            "description": "Classification code from project-meta.yaml work_orders.class_prefix"
           },
           "referenceNumber": {
-            "type": "string"
+            "type": "string",
+            "description": "Reference number from project-meta.yaml work_orders.reference_prefix with sequence"
           },
           "date": {
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "description": "ISO 8601 date (YYYY-MM-DD)"
           },
           "executor": {
-            "type": "string"
+            "type": "string",
+            "description": "Operator name from project-meta.yaml (operator.name)"
           },
           "subject": {
             "type": "string",
-            "maxLength": 100
+            "maxLength": 100,
+            "description": "One-line description of work performed"
+          },
+          "authorization": {
+            "type": "object",
+            "properties": {
+              "taskReference": {
+                "type": "string",
+                "description": "Planning path/section OR exact dated direct operator request; not arbitrary external text."
+              },
+              "authorizedBy": {
+                "type": "string",
+                "description": "Human name who authorized or 'Backlog' for pre-approved tasks"
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "project-elaboration",
+                  "direct-operator-request"
+                ]
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "exclusions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "taskReference",
+              "authorizedBy",
+              "source",
+              "scope",
+              "exclusions"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Planned work and rationale, not a retrospective completion claim."
+          },
+          "timeExpenditure": {
+            "type": "object",
+            "properties": {
+              "estimated": {
+                "type": "string",
+                "description": "Estimated time for a human to perform a task (e.g., '2h 30m')"
+              },
+              "actual": {
+                "type": "string",
+                "description": "Actual elapsed effort, recorded after execution; never inferred from a human estimate."
+              }
+            },
+            "required": [
+              "estimated"
+            ]
+          },
+          "materialExpenditure": {
+            "type": "string",
+            "default": "Consumables",
+            "description": "Resources consumed (default: 'Consumables')"
+          },
+          "documentationImpact": {
+            "type": "object",
+            "properties": {
+              "userFacingChange": {
+                "type": "boolean"
+              },
+              "docsUpdated": {
+                "type": "boolean"
+              },
+              "filesChanged": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional observations, recommendations, or follow-up items"
+          },
+          "relatedDocuments": {
+            "type": "object",
+            "properties": {
+              "adrsReferenced": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "previousWOs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cwosResolved": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "technicalSpecification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verificationSteps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "expectedOutcome": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN PROGRESS"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
           },
           "errorClassification": {
             "type": "object",
             "properties": {
               "severity": {
                 "type": "string",
-                "enum": ["Critical", "High", "Medium", "Low"],
+                "enum": [
+                  "Critical",
+                  "High",
+                  "Medium",
+                  "Low"
+                ],
                 "description": "Impact severity of the error"
               },
               "category": {
                 "type": "string",
-                "enum": ["Logic Error", "Type Error", "Integration Error", "Configuration Error", "Documentation Error", "Protocol Violation", "Other"],
+                "enum": [
+                  "Logic Error",
+                  "Type Error",
+                  "Integration Error",
+                  "Configuration Error",
+                  "Documentation Error",
+                  "Protocol Violation",
+                  "Other"
+                ],
                 "description": "Category of error"
               },
               "discoveredBy": {
@@ -229,96 +412,15 @@
                 "description": "How the error was discovered (e.g., 'Build failure', 'Test failure', 'Manual review')"
               }
             },
-            "required": ["severity", "category", "discoveredBy"]
+            "required": [
+              "severity",
+              "category",
+              "discoveredBy"
+            ]
           },
-          "rootCauseAnalysis": {
-            "type": "object",
-            "properties": {
-              "immeditateCause": {
-                "type": "string",
-                "description": "What directly caused the error"
-              },
-              "underlyingCause": {
-                "type": "string",
-                "description": "Why the immediate cause occurred"
-              },
-              "contributingFactors": {
-                "type": "array",
-                "items": { "type": "string" }
-              }
-            },
-            "required": ["immeditateCause"]
-          },
-          "correction": {
-            "type": "object",
-            "properties": {
-              "actionTaken": {
-                "type": "string",
-                "description": "What was done to fix the error"
-              },
-              "filesChanged": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "path": { "type": "string" },
-                    "action": { "type": "string" },
-                    "linesChanged": { "type": "string" }
-                  }
-                }
-              },
-              "verificationSteps": {
-                "type": "array",
-                "items": { "type": "string" }
-              }
-            },
-            "required": ["actionTaken", "filesChanged"]
-          },
-          "prevention": {
-            "type": "object",
-            "properties": {
-              "lessonsLearned": {
-                "type": "string",
-                "description": "What can be learned from this error"
-              },
-              "preventiveMeasures": {
-                "type": "array",
-                "items": { "type": "string" },
-                "description": "Steps to prevent recurrence"
-              },
-              "addToGotchas": {
-                "type": "boolean",
-                "description": "Should this be added to GOTCHAS.md?"
-              },
-              "addToErrorCatalog": {
-                "type": "boolean",
-                "description": "Should this be added to ERROR-CATALOG.md?"
-              }
-            },
-            "required": ["lessonsLearned"]
-          },
-          "timeExpenditure": {
-            "type": "object",
-            "properties": {
-              "diagnosisTime": { "type": "string" },
-              "correctionTime": { "type": "string" },
-              "verificationTime": { "type": "string" },
-              "totalTime": { "type": "string" }
-            },
-            "required": ["totalTime"]
-          },
-          "relatedDocuments": {
-            "type": "object",
-            "properties": {
-              "originalWO": {
-                "type": "string",
-                "description": "WO that introduced the error (if known)"
-              },
-              "relatedCWOs": {
-                "type": "array",
-                "items": { "type": "string" }
-              }
-            }
+          "originalWorkOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
           }
         },
         "required": [
@@ -329,11 +431,315 @@
           "date",
           "executor",
           "subject",
-          "errorClassification",
-          "rootCauseAnalysis",
-          "correction",
-          "prevention",
-          "timeExpenditure"
+          "authorization",
+          "description",
+          "objective",
+          "technicalSpecification",
+          "verificationSteps",
+          "expectedOutcome",
+          "status",
+          "rationale",
+          "errorClassification"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "updateWorkOrder",
+      "description": "Update a saved active record and matching registry entry within authorized scope; terminal records cannot be reopened.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "workOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
+          },
+          "previousStatus": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN PROGRESS",
+              "BLOCKED"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "IN PROGRESS",
+              "BLOCKED"
+            ]
+          },
+          "progress": {
+            "type": "string",
+            "minLength": 1
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "workOrderId",
+          "previousStatus",
+          "status",
+          "progress",
+          "updatedAt"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "previousStatus": {
+                  "const": "PENDING"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": "IN PROGRESS"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "closeWorkOrder",
+      "description": "Close only a verified IN PROGRESS order as COMPLETE. Check stored authority, actual outputs and all criteria; never treat placeholders as evidence. Preserve terminal result.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "workOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
+          },
+          "previousStatus": {
+            "type": "string",
+            "enum": [
+              "IN PROGRESS"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "const": "COMPLETE"
+          },
+          "filesChanged": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "Created",
+                    "Modified",
+                    "Deleted",
+                    "Renamed"
+                  ]
+                }
+              },
+              "required": [
+                "path",
+                "action"
+              ]
+            }
+          },
+          "verificationResults": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "command": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "outcome": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "NOT APPLICABLE"
+                  ]
+                },
+                "exitCode": {
+                  "type": "integer",
+                  "const": 0
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "command",
+                "outcome",
+                "evidence"
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "outcome": {
+                        "const": "PASS"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "exitCode"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "acceptanceCriteria": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "criterion": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "satisfied": {
+                  "type": "boolean",
+                  "const": true
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "criterion",
+                "satisfied",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "timeActual": {
+            "type": "string",
+            "minLength": 1
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "elaborationReview": {
+            "type": "string",
+            "minLength": 1
+          },
+          "correctiveAnalysis": {
+            "type": "object",
+            "properties": {
+              "rootCause": {
+                "type": "string",
+                "minLength": 1
+              },
+              "prevention": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "rootCause",
+              "prevention"
+            ]
+          },
+          "orderType": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "corrective",
+              "diagnostic"
+            ]
+          }
+        },
+        "required": [
+          "workOrderId",
+          "previousStatus",
+          "status",
+          "orderType",
+          "filesChanged",
+          "verificationResults",
+          "acceptanceCriteria",
+          "timeActual",
+          "completedAt",
+          "elaborationReview"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "orderType": {
+                  "const": "corrective"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "correctiveAnalysis"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "voidWorkOrder",
+      "description": "Close an active abandoned order as VOID with reason. Never delete or modify a terminal result.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "workOrderId": {
+            "type": "string",
+            "pattern": "^(WO|CWO|DWO)-[0-9]{4}-[0-9]{3}$"
+          },
+          "previousStatus": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "IN PROGRESS",
+              "BLOCKED"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "const": "VOID"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "elaborationReview": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "workOrderId",
+          "previousStatus",
+          "status",
+          "reason",
+          "completedAt",
+          "elaborationReview"
         ]
       }
     }
